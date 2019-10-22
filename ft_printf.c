@@ -5,66 +5,60 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 09:08:04 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/22 11:37:42 by gsharony         ###   ########.fr       */
+/*   Created: 2019/10/22 14:32:41 by gsharony          #+#    #+#             */
+/*   Updated: 2019/10/22 15:06:18 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libc.h>
-#include <stdarg.h>
+#include "ft_printf.h"
 
-size_t		dispInt(int value)
+void	ft_putstr(char *str)
 {
-	if (value < 10)
+	int		a;
+
+	a = 0;
+	if (!str)
+		return ;
+	while (str[a] != '\0')
 	{
-		putchar(0x30 + value);
-		return (1);
+		write(1, &str[a], 1);
+		a++;
 	}
-	size_t size = dispInt(value / 10);
-	putchar(0x30 + value % 10);
-	return (1 + size);
 }
 
-int			ft_printf(const char *str, ...)
+void	ft_putchar(char c)
 {
-	va_list		paramInfo;
+	write(1, &c, 1);
+}
 
-	va_start(paramInfo, str);
-	size_t		written = 0;
-	char		current;
+void	ft_argument(char op, va_list list)
+{
+	if (op == 's')
+	{
+		char *d = va_arg(list, char *);
+		ft_putstr(d);
+	}
+}
 
-	while ((current = *str) != '\0')
+int		ft_printf(const char *str, ...)
+{
+	int			a;
+	char		b;
+	va_list		c;
+
+	a = 0;
+	va_start(c, str);
+	while ((b = *str) != '\0')
 	{
 		str++;
-		if (current != '%')
+		if (b != '%')
 		{
-			putchar(current);
-			written++;
-			continue;
+			ft_putchar(b);
+			a++;
+			continue ;
 		}
-		switch (*str++)
-		{
-			case 'd':
-				{
-					int integer = va_arg(paramInfo, int);
-					written += dispInt(integer);
-				}
-				break;
-			case 's':
-				{
-					const char * string = va_arg(paramInfo, const char *);
-					while (*string != '\0')
-					{
-						putchar(*string++);
-						written++;
-					}
-				}
-				break;
-			default:
-				fprintf(stderr, "Specified format is not supported!");
-				abort();
-		}
+		ft_argument(*str, c);
+		str++;
 	}
-	va_end(paramInfo);
-	return (written);
+	return (a);
 }
