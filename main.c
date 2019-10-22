@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/22 11:21:48 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/22 11:38:34 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int		main(void)
 {
-	ft_printf("Begin End\n");
+	ft_printf("Begin %s End %d\n", "Middle", 10);
 	return (0);
 }

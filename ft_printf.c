@@ -6,13 +6,12 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 09:08:04 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/22 11:20:21 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/22 11:37:42 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libc.h>
 #include <stdarg.h>
-#include <stdio.h>
 
 size_t		dispInt(int value)
 {
@@ -47,13 +46,13 @@ int			ft_printf(const char *str, ...)
 		{
 			case 'd':
 				{
-					int integer = (int)va_arg(paramInfo, int);
+					int integer = va_arg(paramInfo, int);
 					written += dispInt(integer);
 				}
 				break;
 			case 's':
 				{
-					const char * string = (const char *)va_arg(paramInfo, const char *);
+					const char * string = va_arg(paramInfo, const char *);
 					while (*string != '\0')
 					{
 						putchar(*string++);
