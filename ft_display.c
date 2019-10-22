@@ -1,24 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_display.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/22 16:20:10 by gsharony         ###   ########.fr       */
+/*   Created: 2019/10/22 15:23:09 by gsharony          #+#    #+#             */
+/*   Updated: 2019/10/22 15:23:29 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int		main(void)
+void	ft_putstr(char *str)
 {
-	int	a;
+	int		a;
 
-	a = (unsigned int)-12;
-	ft_printf("String: |%s|\nCharacter: |%c|\nNumber: |%d|\n", "Middle", 'a', 10);
-	printf("Number [i]: |%d|\n", a);
-	return (0);
+	a = 0;
+	if (!str)
+		return ;
+	while (str[a] != '\0')
+	{
+		write(1, &str[a], 1);
+		a++;
+	}
+}
+
+void	ft_putchar(int c)
+{
+	char	a;
+
+	a = (char)c;
+	write(1, &a, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+		return (ft_putstr("-2147483648"));
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		ft_putchar(nb + '0');
 }

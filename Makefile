@@ -6,7 +6,7 @@
 #    By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/22 09:39:55 by gsharony          #+#    #+#              #
-#    Updated: 2019/10/22 09:44:03 by gsharony         ###   ########.fr        #
+#    Updated: 2019/10/22 15:26:01 by gsharony         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= libftprintf.a
 
 DIR			= ./
 
-SRCS		= ft_printf.c
+SRCS		= ${DIR}ft_printf.c ${DIR}ft_display.c
 
 OBJECTS		= ${SRCS:.c=.o}
 
