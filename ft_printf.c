@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:32:41 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/22 15:24:08 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/23 13:14:56 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,15 @@ void	ft_argument(char op, va_list list)
 		int c = va_arg(list, int);
 		ft_putchar(c);
 	}
-	else if (op == 'd')
+	else if (op == 'd' || op == 'i')
 	{
 		int d = va_arg(list, int);
 		ft_putnbr(d);
+	}
+	else if (op == 'p')
+	{
+		void *p = va_arg(list, void *);
+		ft_print_adresse(&p);
 	}
 }
 
