@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:23:09 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/22 15:23:29 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/27 15:09:34 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,17 @@ void	ft_putnbr(int nb)
 		ft_putchar('-');
 		nb = -nb;
 	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		ft_putchar(nb + '0');
+}
+
+void	ft_putlongnbr(unsigned int nb)
+{
 	if (nb >= 10)
 	{
 		ft_putnbr(nb / 10);
