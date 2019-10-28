@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:32:41 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/27 15:10:38 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/10/28 16:42:30 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_argument(char op, va_list list)
 	else if (op == 'd' || op == 'i')
 	{
 		int d = va_arg(list, int);
-		ft_putnbr(d);
+		ft_putnbr_base((long long)d, "0123456789");
 	}
 	else if (op == 'p')
 	{
@@ -37,7 +37,7 @@ void	ft_argument(char op, va_list list)
 	else if (op == 'u')
 	{
 		unsigned int u = va_arg(list, unsigned int);
-		ft_putlongnbr(u);
+		ft_putlongnbr(u, "0123456789");
 	}
 }
 

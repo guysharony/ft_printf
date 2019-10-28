@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/27 15:12:09 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/10/28 16:44:16 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,17 @@
 # include <stdarg.h>
 
 int		ft_printf(const char *, ...);
+
+//Display strings
 void	ft_putstr(char *str);
 void	ft_putchar(int c);
-void	ft_putnbr(int nb);
-void	ft_putnbr_hex(long long nb);
+
+//Display adresses
 void	ft_print_adresse(void *a);
-void	ft_putlongnbr(unsigned int nb);
+
+//Display numbers
+void	ft_putlongnbr(unsigned int nb, char *base);
+void	ft_putchar_base(int c, char *base);
+void	ft_putnbr_base(long long nb, char *base);
 
 #endif

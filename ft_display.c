@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:23:09 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/27 15:09:34 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/10/28 15:55:52 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,33 +32,4 @@ void	ft_putchar(int c)
 
 	a = (char)c;
 	write(1, &a, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-		return (ft_putstr("-2147483648"));
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-		ft_putchar(nb + '0');
-}
-
-void	ft_putlongnbr(unsigned int nb)
-{
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-		ft_putchar(nb + '0');
 }
