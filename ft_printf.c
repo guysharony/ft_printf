@@ -6,35 +6,35 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:32:41 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/28 17:13:34 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/10/29 08:36:02 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_argument(char op, va_list list)
+void	ft_argument(t_format f, va_list list)
 {
-	if (op == 's')
+	if (f.val == 's')
 	{
 		char *s = va_arg(list, char *);
 		ft_putstr(s);
 	}
-	else if (op == 'c')
+	else if (f.val == 'c')
 	{
 		int c = va_arg(list, int);
 		ft_putchar(c);
 	}
-	else if (op == 'd' || op == 'i')
+	else if (f.val == 'd' || f.val == 'i')
 	{
 		int d = va_arg(list, int);
 		ft_putnbr_base((long long)d, "0123456789");
 	}
-	else if (op == 'p')
+	else if (f.val == 'p')
 	{
 		void *p = va_arg(list, void *);
 		ft_print_adresse(&p);
 	}
-	else if (op == 'u')
+	else if (f.val == 'u')
 	{
 		unsigned int u = va_arg(list, unsigned int);
 		ft_putlongnbr(u, "0123456789");
@@ -58,8 +58,7 @@ int		ft_printf(const char *str, ...)
 			a++;
 			continue ;
 		}
-		ft_argument(*str, c);
-		str++;
+		str += ft_flags(str, c) + 1;
 	}
 	va_end(c);
 	return (a);

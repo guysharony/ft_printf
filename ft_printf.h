@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/28 17:04:30 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/10/29 08:25:19 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,25 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 
-int		ft_printf(const char *, ...);
+typedef struct		s_format
+{
+	int				left;
+	int				zero;
+	char			val;
+	int				pr[2];
+}					t_format;
 
-//Display strings
-void	ft_putstr(char *str);
-void	ft_putchar(int c);
+int					ft_printf(const char *format, ...);
+void				ft_argument(t_format f, va_list list);
+int					ft_flags(const char *format, va_list list);
 
-//Display adresses
-void	ft_print_adresse(void *a);
+void				ft_putstr(char *str);
+void				ft_putchar(int c);
 
-//Display numbers
-void	ft_putlongnbr(unsigned int nb, char *base);
-void	ft_putchar_base(int c, char *base);
-void	ft_putnbr_base(long long nb, char *base);
+void				ft_print_adresse(void *a);
+
+void				ft_putlongnbr(unsigned int nb, char *base);
+void				ft_putchar_base(int c, char *base);
+void				ft_putnbr_base(long long nb, char *base);
 
 #endif
