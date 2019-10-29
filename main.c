@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/29 09:41:56 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/29 09:54:26 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ int		main(void)
 	ft_printf("Hexa----------|%i|\n", 0x125);
 	ft_printf("Adresse-------|%p|\n", &a);
 	ft_printf("Unsigned int--|%u|\n", -456);
+	ft_printf("\n==============\n\n");
+	ft_printf("Number flag---|%0.*d|\n", 10, 42);
 	return (0);
 }
