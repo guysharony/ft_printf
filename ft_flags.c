@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/29 08:35:31 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/29 09:43:39 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int			ft_flags(const char *format, va_list list)
 
 	a = 0;
 	f = fl_init();
-	while (format[a] != '\0' && format[a] != 's')
+	while (format[a] != '\0' && !ft_isalpha(format[a]))
 	{
 		if (format[a] == '-')
 			f.left = 1;
