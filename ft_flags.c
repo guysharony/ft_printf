@@ -6,13 +6,14 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/29 09:43:39 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/30 08:38:25 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-t_format	fl_init(void)
+static t_format		fl_init(void)
 {
 	t_format f;
 
@@ -24,32 +25,45 @@ t_format	fl_init(void)
 	return (f);
 }
 
-int			ft_flags(const char *format, va_list list)
+static void			ft_conv(t_format f, va_list list)
 {
-	t_format	f;
-	int			a;
+	if (f.val == 'd' || f.val == 'i')
+		dsp_number(f, (long long)va_arg(list, int));
+	/*else if (f.val == 'c')
+		dsp_char(f, va_arg(f.lst, int));
+	else if (f.val == 's')
+		dsp_str(f, va_arg(f.lst, char *));
+	else if (f.val == 'p')
+		dsp_adress(f, va_arg(f.lst, void *));
+	else if (f.val == 'u')
+		dsp_unsigned(f, va_arg(f.lst, unsigned int));*/
+}
 
-	a = 0;
+char				*ft_flags(const char *format, va_list list)
+{
+	t_format		f;
+	const char		*tmp;
+
 	f = fl_init();
-	while (format[a] != '\0' && !ft_isalpha(format[a]))
+	tmp = format;
+	while (*format != '\0' && !ft_isalpha(*format))
 	{
-		if (format[a] == '-')
+		if (*format == '-')
 			f.left = 1;
-		if (format[a] == '0')
+		if (*format == '0')
 			f.zero = 1;
-		if (format[a] == '.')
+		if (*format == '.')
 		{
 			f.pr[0] = 1;
-			a++;
-			if (format[a++] == '*')
-			{
+			format++;
+			if (*format == '*')
 				f.pr[1] = (int)va_arg(list, int);
-				a--;
-			}
+			else if (*format >= '0' && *format <= '9')
+				f.pr[1] = ft_atoi(format);
 		}
-		a++;
+		format++;
 	}
-	f.val = format[a];
-	ft_argument(f, list);
-	return (a);
+	f.val = *format++; 
+	ft_conv(f, list);
+	return ((char *)format);
 }

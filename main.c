@@ -6,27 +6,27 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/29 09:54:26 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/30 07:50:56 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int		main(void)
 {
-	int				a;
-	unsigned int	b;
+	int a;
 
 	a = -42;
-	b = a;
-	ft_printf("String--------|%s|\n", "Misdle");
+	/*ft_printf("String--------|%s|\n", "Misdle");
 	ft_printf("Character-----|%c|\n", 'a');
 	ft_printf("Number--------|%d|\n", 42);
 	ft_printf("Octet---------|%i|\n", 042);
 	ft_printf("Hexa----------|%i|\n", 0x125);
 	ft_printf("Adresse-------|%p|\n", &a);
 	ft_printf("Unsigned int--|%u|\n", -456);
-	ft_printf("\n==============\n\n");
-	ft_printf("Number flag---|%0.*d|\n", 10, 42);
+	ft_printf("\n==============\n\n");*/
+	ft_printf("Number flag---|%-.*d|\n", 10, 42);
+	printf("Number flag---|%-.*d|\n", 10, 42);
 	return (0);
 }

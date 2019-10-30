@@ -6,13 +6,13 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:32:41 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/29 08:36:02 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/30 08:23:16 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_argument(t_format f, va_list list)
+/*void	ft_argument(t_format f, va_list list)
 {
 	if (f.val == 's')
 	{
@@ -39,7 +39,7 @@ void	ft_argument(t_format f, va_list list)
 		unsigned int u = va_arg(list, unsigned int);
 		ft_putlongnbr(u, "0123456789");
 	}
-}
+}*/
 
 int		ft_printf(const char *str, ...)
 {
@@ -58,7 +58,7 @@ int		ft_printf(const char *str, ...)
 			a++;
 			continue ;
 		}
-		str += ft_flags(str, c) + 1;
+		str = ft_flags(str, c);
 	}
 	va_end(c);
 	return (a);

@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/29 08:25:19 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/30 08:28:22 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ typedef struct		s_format
 
 int					ft_printf(const char *format, ...);
 void				ft_argument(t_format f, va_list list);
-int					ft_flags(const char *format, va_list list);
+char				*ft_flags(const char *format, va_list list);
+
+void				dsp_number(t_format f, long long nb);
 
 void				ft_putstr(char *str);
 void				ft_putchar(int c);
