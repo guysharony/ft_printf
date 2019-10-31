@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/30 10:55:08 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/31 12:04:19 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ static void			ft_conv(t_format f, va_list list)
 {
 	if (f.val == 'd' || f.val == 'i')
 		dsp_number(f, (long long)va_arg(list, int));
-	/*else if (f.val == 'c')
-		dsp_char(f, va_arg(f.lst, int));
+	else if (f.val == 'c')
+		dsp_char(f, (int)va_arg(list, int));
 	else if (f.val == 's')
-		dsp_str(f, va_arg(f.lst, char *));
+		dsp_str(f, (char *)va_arg(list, char *));
 	else if (f.val == 'p')
-		dsp_adress(f, va_arg(f.lst, void *));*/
+		dsp_adress(f, (void *)va_arg(list, void *));
 	else if (f.val == 'u')
 		dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int));
 }
