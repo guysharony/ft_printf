@@ -6,15 +6,15 @@
 #    By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/22 09:39:55 by gsharony          #+#    #+#              #
-#    Updated: 2019/10/31 12:03:20 by gsharony         ###   ########.fr        #
+#    Updated: 2019/10/31 12:49:23 by gsharony         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libftprintf.a
 
-DIR			= ./
+DIR			= ./display/
 
-SRCS		= ${DIR}ft_printf.c ${DIR}ft_display.c ${DIR}ft_number.c ${DIR}ft_adress.c ${DIR}ft_flags.c ${DIR}dsp_number.c ${DIR}dsp_string.c
+SRCS		= ft_printf.c src/ft_string.c src/ft_number.c src/ft_adress.c ${DIR}ft_flags.c ${DIR}dsp_number.c ${DIR}dsp_string.c
 
 OBJECTS		= ${SRCS:.c=.o}
 
