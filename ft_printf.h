@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/31 15:03:19 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/31 15:53:12 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void				ft_print_adress(void *a);
 void				ft_putlongnbr(unsigned int nb, char *base);
 void				ft_putchar_base(int c, char *base);
 void				ft_putnbr_base(long long nb, char *base);
+int					ft_format(char c, char *format);
 
 int					ft_nbrlen(long long nb);
 int					ft_u_nbrlen(unsigned int nb);
