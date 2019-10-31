@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/30 08:49:06 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/31 10:18:17 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int		main(void)
 	ft_printf("Unsigned int--|%u|\n", -456);
 	ft_printf("\n==============\n\n");*/
 	ft_printf("Number flag---|%-.10d|\n", -42);
-	printf("Number flag---|%-.10d|\n", -42);
+	printf("Number flag---|%%%-.10d|\n", -42);
 	return (0);
 }

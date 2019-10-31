@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/30 08:28:22 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/30 10:56:35 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void				ft_argument(t_format f, va_list list);
 char				*ft_flags(const char *format, va_list list);
 
 void				dsp_number(t_format f, long long nb);
+void				dsp_unsigned(t_format f, unsigned int nb);
 
 void				ft_putstr(char *str);
 void				ft_putchar(int c);

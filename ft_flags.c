@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/30 08:44:38 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/30 10:55:08 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static void			ft_conv(t_format f, va_list list)
 	else if (f.val == 's')
 		dsp_str(f, va_arg(f.lst, char *));
 	else if (f.val == 'p')
-		dsp_adress(f, va_arg(f.lst, void *));
+		dsp_adress(f, va_arg(f.lst, void *));*/
 	else if (f.val == 'u')
-		dsp_unsigned(f, va_arg(f.lst, unsigned int));*/
+		dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int));
 }
 
 char				*ft_flags(const char *format, va_list list)
