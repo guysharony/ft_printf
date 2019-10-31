@@ -6,67 +6,82 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/31 13:10:02 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/31 15:35:28 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+#include <stdio.h>
 
 static t_format		fl_init(void)
 {
 	t_format f;
 
-	f.left = 0;
-	f.zero = 0;
-	f.val = 'a';
-	f.pr[0] = 0;
-	f.pr[1] = 0;
+	f.fl = NULL;
+	f.vl = 0;
+	f.le = NULL;
+	f.wi = -1;
+	f.pr = -1;
 	return (f);
 }
 
 static void			ft_conv(t_format f, va_list list)
 {
-	if (f.val == 'd' || f.val == 'i')
+	if (f.vl == 'd' || f.vl == 'i')
 		dsp_number(f, (long long)va_arg(list, int));
-	else if (f.val == 'c')
+	else if (f.vl == 'c')
 		dsp_char(f, (int)va_arg(list, int));
-	else if (f.val == 's')
+	else if (f.vl == 's')
 		dsp_str(f, (char *)va_arg(list, char *));
-	else if (f.val == 'p')
+	else if (f.vl == 'p')
 		dsp_adress(f, (void *)va_arg(list, void *));
-	else if (f.val == 'u')
+	else if (f.vl == 'u')
 		dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int), "0123456789");
-	else if (f.val == 'x')
+	else if (f.vl == 'x')
 		dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int), "0123456789abcdef");
-	else if (f.val == 'X')
+	else if (f.vl == 'X')
 		dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int), "0123456789ABCDEF");
+}
+
+int					ft_format(char c, char *format)
+{
+	int		a;
+
+	a = 0;
+	while (format[a])
+	{
+		if (format[a] == c)
+			return (1);
+		a++;
+	}
+	return (0);
 }
 
 char				*ft_flags(const char *format, va_list list)
 {
+	int				a;
+	int				b;
 	t_format		f;
-	const char		*tmp;
 
+	a = 0;
+	b = 0;
 	f = fl_init();
-	tmp = format;
-	while (*format != '\0' && !ft_isalpha(*format))
-	{
-		if (*format == '-')
-			f.left = 1;
-		if (*format == '0')
-			f.zero = 1;
-		if (*format == '.')
-		{
-			f.pr[0] = 1;
-			format++;
-			if (*format == '*')
-				f.pr[1] = (int)va_arg(list, int);
-			else if (*format >= '0' && *format <= '9')
-				f.pr[1] = ft_atoi(format);
-		}
-		format++;
-	}
-	f.val = *format++; 
+	while (ft_format(format[a], "-+ #0"))
+		a++;
+	f.fl = ft_substr(format, b, a);
+	if (format[a] == '*')
+		f.wi = (int)va_arg(list, int);
+	else
+		f.wi = ft_atoi(format + a);
+	while (ft_format(format[a], "0123456789*"))
+		a++;
+	if (format[a] == '.' && format[a + 1] == '*')
+		f.pr = (int)va_arg(list, int);
+	else if (format[a] == '.' && format[a + 1] >= '0' && format[a + 1] <= '9')
+		f.pr = ft_atoi(format + a + 1);
+	while (!ft_format(format[a], "diouXxfFeEgGaAcsbp"))
+		a++;
+	f.vl = format[a];
 	ft_conv(f, list);
-	return ((char *)format);
+	return ((char *)format + a + 1);
 }

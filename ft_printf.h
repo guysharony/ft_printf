@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/31 13:07:08 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/31 15:03:19 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@
 
 typedef struct		s_format
 {
-	int				left;
-	int				zero;
-	char			val;
-	int				pr[2];
+	char			*fl;
+	char			vl;
+	char			*le;
+	int				wi;
+	int				pr;
 }					t_format;
 
 int					ft_printf(const char *format, ...);

@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:57:19 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/31 12:46:27 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/31 15:06:00 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	dsp_adress(t_format f, void *str)
 {
-	if (f.pr[0] == 1)
+	if (f.pr >= 0)
 		return ;
 	ft_print_adress(str);
 }
