@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/31 11:34:12 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/10/31 12:24:15 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ int		main(void)
 	int a;
 
 	a = -42;
+	printf("\n___ Testing [simple output] ___\n");
+	ft_printf("Display 1p----|%%|\n");
+	ft_printf("Display 2p----|%%%%|\n");
+	ft_printf("Display 3p----|%%%%%%|\n");
 	printf("\n___ Testing [only formats] ___\n");
 	ft_printf("String--------|%s|\n", "Middle");
 	ft_printf("Character-----|%c|\n", 'a');
