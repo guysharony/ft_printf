@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:32:41 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/31 12:19:31 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/01 11:15:19 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_printf(const char *str, ...)
 		else
 			if (*str == '%')
 			{
-				write(1, "%%", 2);
+				write(1, "%", 1);
 				str++;
 				continue ;
 			}
