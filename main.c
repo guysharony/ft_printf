@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/01 11:25:39 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/01 13:18:27 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,32 +91,58 @@ int		main(void)
 
 	printf("\n___ Testing [%%d] ___\n");
 	ft_printf(">---|%d|\n", 42);
+	printf("<---|%d|\n", 42);
 	ft_printf(">---|%d|\n", -42);
+	printf("<---|%d|\n", -42);
 	ft_printf(">---|%d|\n", 0);
+	printf("<---|%d|\n", 0);
 	ft_printf(">---|%d|\n", 3);
+	printf("<---|%d|\n", 3);
 	ft_printf(">---|%d|\n", -2147483647);
-	ft_printf(">---|% d|\n", 0);
+	printf("<---|%d|\n", -2147483647);
+	ft_printf(">---|%d|\n", 0);
+	printf("<---|%d|\n", 0);
 	ft_printf(">---|%+d|\n", 0);
+	printf("<---|%+d|\n", 0);
 	ft_printf(">---|%+++d|\n", 534);
+	printf("<---|%+++d|\n", 534);
 	ft_printf(">---|% d|\n", 0xff11ff);
+	printf("<---|% d|\n", 0xff11ff);
 	ft_printf(">---|%.12d|\n", 1144);
+	printf("<---|%.12d|\n", 1144);
 	ft_printf(">---|%.d|\n", 0);
+	printf("<---|%.d|\n", 0);
 	ft_printf(">---|%-7d|\n", 7789);
+	printf("<---|%-7d|\n", 7789);
 	ft_printf(">---|%0d|\n", -579);
+	printf("<---|%0d|\n", -579);
 	ft_printf(">---|%04d|\n", 0);
+	printf("<---|%04d|\n", 0);
 	ft_printf(">---|%+12.5d|\n", 140);
+	printf("<---|%+12.5d|\n", 140);
 	ft_printf(">---|%00+10.4d|\n", 0);
+	printf("<---|%00+10.4d|\n", 0);
 	ft_printf(">---|%.0d|\n", -21);
+	printf("<---|%.0d|\n", -21);
 	ft_printf(">---|%.5d|\n", -421);
+	printf("<---|%.5d|\n", -421);
 	ft_printf(">---|%5d|\n", -741);
+	printf("<---|%5d|\n", -741);
 	ft_printf(">---|hello % .d this is a test|\n", 0);
+	printf("<---|hello % .d this is a test|\n", 0);
 
 	printf("\n___ Testing [%%i] ___\n");
 	ft_printf(">---|%i|\n", (signed int)0xff11);
+	printf("<---|%i|\n", (signed int)0xff11);
 	ft_printf(">---|%.2i|\n", -10);
+	printf("<---|%.2i|\n", -10);
 	ft_printf(">---|%.i|\n", 44);
+	printf("<---|%.i|\n", 44);
 	ft_printf(">---|%08i|\n", -71);
+	printf("<---|%08i|\n", -71);
 	ft_printf(">---|%-2i|\n", -7);
+	printf("<---|%-2i|\n", -7);
 	ft_printf(">---|%.0i|\n", 0);
+	printf("<---|%.0i|\n", 0);
 	return (0);
 }
