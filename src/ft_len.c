@@ -6,13 +6,13 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 13:00:20 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/31 13:05:23 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/01 10:46:54 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		ft_nbrlen(long long nb)
+int		ft_nbrlen(long long nb, int base)
 {
 	int		a;
 
@@ -21,7 +21,7 @@ int		ft_nbrlen(long long nb)
 		nb *= -1;
 	while (nb > 0)
 	{
-		nb /= 10;
+		nb /= base;
 		a++;
 	}
 	return (a);

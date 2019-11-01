@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/01 09:11:03 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/01 10:56:49 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,14 @@ void				dsp_adress(t_format f, void *str);
 void				ft_putstr(char *str);
 void				ft_putnstr(char *str, int len);
 void				ft_putchar(int c);
+void				ft_time(char c, int n);
 void				ft_print_adress(void *a);
 void				ft_putlongnbr(unsigned int nb, char *base);
 void				ft_putchar_base(int c, char *base);
 void				ft_putnbr_base(long long nb, char *base);
 int					ft_format(char c, char *format);
 
-int					ft_nbrlen(long long nb);
+int					ft_nbrlen(long long nb, int base);
 int					ft_u_nbrlen(unsigned int nb);
 
 #endif

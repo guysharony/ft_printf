@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/01 09:13:11 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/01 09:23:10 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,18 @@ int		main(void)
 	ft_printf("---|%1.4s et %-6.8s et %4.2s|\n", "tuuu", "12345", "hu");
 
 	printf("\n___ Testing [%%p] ___\n");
-	ft_printf("---|%p|\n", NULL);
-	ft_printf("---|%p|\n", &a);
-	ft_printf("---|%20p|\n", &a);
-	ft_printf("---|%-25p|\n", &a);
-	ft_printf("---|%2p|\n", &a);
-	ft_printf("---|%----24p et hello %2p %12p|\n", &b, &a, NULL);
+	ft_printf(">---|%p|\n", NULL);
+	printf("<---|%p|\n", NULL);
+	ft_printf(">---|%p|\n", &a);
+	printf("<---|%p|\n", &a);
+	ft_printf(">---|%20p|\n", &a);
+	printf("<---|%20p|\n", &a);
+	ft_printf(">---|%-25p|\n", &a);
+	printf("<---|%-25p|\n", &a);
+	ft_printf(">---|%2p|\n", &a);
+	printf("<---|%2p|\n", &a);
+	ft_printf(">---|%----24p et hello %2p %12p|\n", &b, &a, NULL);
+	printf("<---|%----24p et hello %2p %12p|\n", &b, &a, NULL);
 
 	printf("\n___ Testing [%%d] ___\n");
 	ft_printf("---|%d|\n", 42);
