@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:36:30 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/31 15:10:22 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/01 09:11:52 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	dsp_char(t_format f, int c)
 
 void	dsp_str(t_format f, char *str)
 {
-	size_t	a;
 
 	if (f.pr < 0)
 	{
@@ -32,9 +31,7 @@ void	dsp_str(t_format f, char *str)
 		return ;
 	else
 	{
-		a = 0;
-		while (str[a] && a < ft_strlen(str))
-			write(1, &str[a++], 1);
+		ft_putnstr(str, f.pr);
 		return ;
 	}
 	ft_putstr(str);

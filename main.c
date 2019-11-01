@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/01 07:55:05 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/01 09:13:11 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int		main(void)
 
 	a = -42;
 	printf("\n___ Testing [simple output] ___\n");
-	ft_printf("");
-	ft_printf("---|coco\net titi |\n");
+	ft_printf("--- |%%|\n");
+	ft_printf("--- |%%%%|\n");
 
 	printf("\n___ Testing [%%c] ___ \n");
 	ft_printf("---|%c|\n", 'a');
