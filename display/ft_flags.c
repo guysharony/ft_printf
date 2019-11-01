@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/01 10:24:54 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/01 12:38:13 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char				*ft_flags(const char *format, va_list list)
 		a++;
 	if (format[a] == '.' && format[a + 1] == '*')
 		f.pr = (int)va_arg(list, int);
-	else if (format[a] == '.' && format[a + 1] >= '0' && format[a + 1] <= '9')
+	else if (format[a] == '.')
 		f.pr = ft_atoi(format + a + 1);
 	while (!ft_format(format[a], "diouXxfFeEgGaAcsbp"))
 		a++;

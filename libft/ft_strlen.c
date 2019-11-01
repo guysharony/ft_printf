@@ -6,7 +6,7 @@
 /*   By: gsharony <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 12:57:35 by gsharony          #+#    #+#             */
-/*   Updated: 2019/10/16 15:59:54 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/01 11:40:17 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *s)
 	size_t	t;
 
 	t = 0;
+	if (!s)
+		return (6);
 	while (s[t] != '\0')
 		t++;
 	return (t);

@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:23:09 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/01 09:09:52 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/01 12:18:41 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,11 @@ void	ft_putnstr(char *str, int len)
 	{
 		if (len <= 6 && len >= 0)
 			write(1, "(null)", len);
-		else if (len < 0)
-			write(1, "(null)", 0);
 		else
 			write(1, "(null)", 6);
 		return ;
 	}
-	while (str[a])
+	while (str[a] && len-- > 0)
 	{
 		write(1, &str[a], 1);
 		a++;
