@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 07:04:07 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/02 15:57:34 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/02 16:08:12 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,13 @@ void			dsp_number(t_format f, long long nb)
 	int		a;
 
 	a = ft_space(f, nb);
-	if (!ft_format('-', f.fl) && ((f.wi > f.pr && f.pr > 0) || !ft_format('0', f.fl)))
-		ft_time(' ', a);
-	if (!ft_format('-', f.fl) && ft_format('0', f.fl) && f.pr < 0)
-		ft_time('0', a);
+	if (!ft_format('-', f.fl))
+	{
+		if ((f.wi > f.pr && f.pr > 0) || !ft_format('0', f.fl))
+			ft_time(' ', a);
+		else if (ft_format('0', f.fl) && f.pr < 0)
+			ft_time('0', a);
+	}
 	if (ft_format('+', f.fl) && nb >= 0)
 		write(1, "+", 1);
 	if (ft_format(' ', f.fl))
