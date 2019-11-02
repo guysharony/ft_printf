@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 13:00:20 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/01 10:46:54 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/01 18:23:08 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int		ft_nbrlen(long long nb, int base)
 {
 	int		a;
 
-	a = 0;
+	a = 1;
 	if (nb < 0)
 		nb *= -1;
-	while (nb > 0)
+	while (nb > 9)
 	{
 		nb /= base;
 		a++;
