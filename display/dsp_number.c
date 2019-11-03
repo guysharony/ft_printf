@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 07:04:07 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/03 07:30:42 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/03 09:25:25 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int		ft_number(t_format f, long long nb)
 	int		a;
 
 	a = ft_nbrlen(nb, 10);
-	if (f.pr < 0 || f.pr >= a)
+	if (f.pr < 0 || f.pr >= a || f.pr < a)
 		a -= ft_nbrlen(nb, 10);
 	else
 		a = f.pr;

@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/03 08:39:50 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/03 08:57:27 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,8 @@ int		main(void)
 	printf("<---|%+++d|\n", 534);
 	ft_printf(">---|% d|\n", 0xff11ff);
 	printf("<---|% d|\n", 0xff11ff);
-	ft_printf(">---|%.12d|\n", 1144);
-	printf("<---|%.12d|\n", 1144);
+	ft_printf(">---|%.2d|\n", 1144);
+	printf("<---|%.2d|\n", 1144);
 	ft_printf(">---|%.d|\n", 0);
 	printf("<---|%.d|\n", 0);
 	ft_printf(">---|%-7d|\n", 7789);
