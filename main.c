@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/03 07:07:44 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/03 08:13:04 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,5 +144,41 @@ int		main(void)
 	printf("<---|%-2i|\n", -7);
 	ft_printf(">---|%.0i|\n", 0);
 	printf("<---|%.0i|\n", 0);
+
+	printf("\n___ Testing [%%u] ___\n");
+	ft_printf(">---|%u|\n", 0);
+	printf("<---|%u|\n", 0);
+	ft_printf(">---|%u|\n", 1234);
+	printf("<---|%u|\n", 1234);
+	ft_printf(">---|%u|\n", -1001234);
+	printf("<---|%u|\n", -1001234);
+	ft_printf(">---|%.1u|\n", 121);
+	printf("<---|%.1u|\n", 121);
+	ft_printf(">---|%.0u|\n", 76543);
+	printf("<---|%.0u|\n", 76543);
+	ft_printf(">---|%.u|\n", -7);
+	printf("<---|%.u|\n", -7);
+	ft_printf(">---|%4u|\n", 1);
+	printf("<---|%4u|\n", 1);
+	ft_printf(">---|%-12u|\n", 17894);
+	printf("<---|%-12u|\n", 17894);
+	ft_printf(">---|%2u|\n", 17894);
+	printf("<---|%2u|\n", 17894);
+	ft_printf(">---|%08u|\n", 171894);
+	printf("<---|%08u|\n", 171894);
+	ft_printf(">---|%0u|\n", 194);
+	printf("<---|%0u|\n", 194);
+	ft_printf(">---|%-3u|\n", 194);
+	printf("<---|%-3u|\n", 194);
+	ft_printf(">---|toto et %02u coco %-5u mimi|\n", 19, -20);
+	printf("<---|toto et %02u coco %-5u mimi|\n", 19, -20);
+	ft_printf(">---|\ntoto et %00009u%-2u mimi et titi%--14u|\n", 0, 14, 200);
+	printf("<---|\ntoto et %00009u%-2u mimi et titi%--14u|\n", 0, 14, 200);
+	ft_printf(">---|ko%-4.2u et %05.2u!|\n", -456, 0);
+	printf("<---|ko%-4.2u et %05.2u!|\n", -456, 0);
+	ft_printf(">---|%05.1u %3.4u %-4.7u|\n", 45, -1789, 147);
+	printf("<---|%05.1u %3.4u %-4.7u|\n", 45, -1789, 147);
+	ft_printf(">---|%.u|\n", 0);
+	printf("<---|%.u|\n", 0);
 	return (0);
 }
