@@ -6,13 +6,13 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:23:09 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/01 12:18:41 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/03 12:01:25 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_putnstr(char *str, int len)
+int		ft_putnstr(char *str, int len)
 {
 	int		a;
 
@@ -20,16 +20,20 @@ void	ft_putnstr(char *str, int len)
 	if (!str)
 	{
 		if (len <= 6 && len >= 0)
+		{
 			write(1, "(null)", len);
+			return (len);
+		}
 		else
 			write(1, "(null)", 6);
-		return ;
+		return (6);
 	}
 	while (str[a] && len-- > 0)
 	{
 		write(1, &str[a], 1);
 		a++;
 	}
+	return (a);
 }
 
 void	ft_putstr(char *str)
