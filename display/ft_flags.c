@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/02 15:32:04 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/03 11:09:45 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,23 @@ static t_format		fl_init(void)
 	return (f);
 }
 
-static void			ft_conv(t_format f, va_list list)
+static int			ft_conv(t_format f, va_list list)
 {
 	if (f.vl == 'd' || f.vl == 'i')
-		dsp_number(f, (long long)va_arg(list, int));
+		return (dsp_number(f, (long long)va_arg(list, int)));
 	else if (f.vl == 'c')
-		dsp_char(f, (int)va_arg(list, int));
+		return (dsp_char(f, (int)va_arg(list, int)));
 	else if (f.vl == 's')
-		dsp_str(f, (char *)va_arg(list, char *));
+		return (dsp_str(f, (char *)va_arg(list, char *)));
 	else if (f.vl == 'p')
-		dsp_adress(f, (void *)va_arg(list, void *));
+		return (dsp_adress(f, (void *)va_arg(list, void *)));
 	else if (f.vl == 'u')
-		dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int), "0123456789");
+		return (dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int), "0123456789"));
 	else if (f.vl == 'x')
-		dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int), "0123456789abcdef");
+		return (dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int), "0123456789abcdef"));
 	else if (f.vl == 'X')
-		dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int), "0123456789ABCDEF");
+		return (dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int), "0123456789ABCDEF"));
+	return (-1);
 }
 
 int					ft_format(char c, char *format)
@@ -57,18 +58,17 @@ int					ft_format(char c, char *format)
 	return (0);
 }
 
-char				*ft_flags(const char *format, va_list list)
+t_print				ft_flags(const char *format, va_list list)
 {
 	int				a;
-	int				b;
 	t_format		f;
+	t_print			p;
 
 	a = 0;
-	b = 0;
 	f = fl_init();
 	while (ft_format(format[a], "-+ #0"))
 		a++;
-	f.fl = ft_substr(format, b, a);
+	f.fl = ft_substr(format, 0, a);
 	if (format[a] == '*')
 		f.wi = (int)va_arg(list, int);
 	else if (format[a] >= '0' && format[a] <= '9')
@@ -82,6 +82,7 @@ char				*ft_flags(const char *format, va_list list)
 	while (!ft_format(format[a], "diouXxfFeEgGaAcsbp"))
 		a++;
 	f.vl = format[a];
-	ft_conv(f, list);
-	return ((char *)format + a + 1);
+	p.len = ft_conv(f, list);
+	p.str = (char *)format + a + 1;
+	return (p);
 }

@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 07:04:07 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/03 09:25:25 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/03 11:10:50 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,21 @@ void			ft_time(char c, int n)
 		write(1, &c, 1);
 }
 
-void			dsp_number(t_format f, long long nb)
+int				dsp_number(t_format f, long long nb)
 {
 	int		a;
+	int		len;
 
 	a = ft_space(f, nb);
+	len = a;
+	if ((nb >= 0 && ft_format('+', f.fl)) || nb < 0)
+		len++;
 	nb = ft_print_sign(f, nb, a);
-	if (ft_format(' ', f.fl))
+	if (ft_format(' ', f.fl) && len++)
 		write(1, " ", 1);
 	if (!(f.pr == 0 && nb == 0))
 		ft_putnbr_base(ft_number(f, nb), "0123456789");
 	if (ft_format('-', f.fl))
 		ft_time(' ', a);
+	return (len + ft_nbrlen(nb, 10));
 }

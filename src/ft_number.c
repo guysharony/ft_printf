@@ -6,18 +6,18 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 12:47:24 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/01 10:44:34 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/03 11:09:00 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void			ft_putchar_base(int c, char *base)
+void	ft_putchar_base(int c, char *base)
 {
 	write(1, &base[c], 1);
 }
 
-void			ft_putnbr_base(long long nb, char *base)
+void	ft_putnbr_base(long long nb, char *base)
 {
 	if (nb < 0)
 	{
@@ -33,7 +33,7 @@ void			ft_putnbr_base(long long nb, char *base)
 		ft_putchar_base(nb, base);
 }
 
-void			ft_putlongnbr(unsigned int nb, char *base)
+void	ft_putlongnbr(unsigned int nb, char *base)
 {
 	if (nb >= ft_strlen(base))
 	{

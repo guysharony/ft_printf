@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/03 08:49:16 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/03 11:19:22 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,27 @@ typedef struct		s_format
 	int				pr;
 }					t_format;
 
+typedef struct		s_print
+{
+	char			*str;
+	int				len;
+}					t_print;
+
 int					ft_printf(const char *format, ...);
 void				ft_argument(t_format f, va_list list);
-char				*ft_flags(const char *format, va_list list);
+t_print				ft_flags(const char *format, va_list list);
 
-void				dsp_number(t_format f, long long nb);
-void				dsp_unsigned(t_format f, unsigned int nb, char *base);
-void				dsp_str(t_format f, char *str);
-void				dsp_char(t_format f, int c);
-void				dsp_adress(t_format f, void *str);
+int					dsp_number(t_format f, long long nb);
+int					dsp_unsigned(t_format f, unsigned int nb, char *base);
+int					dsp_str(t_format f, char *str);
+int					dsp_char(t_format f, int c);
+int					dsp_adress(t_format f, void *str);
 
 void				ft_putstr(char *str);
 void				ft_putnstr(char *str, int len);
 void				ft_putchar(int c);
 void				ft_time(char c, int n);
-void				ft_print_adress(void *a);
+int					ft_print_adress(void *a);
 void				ft_putlongnbr(unsigned int nb, char *base);
 void				ft_putchar_base(int c, char *base);
 void				ft_putnbr_base(long long nb, char *base);

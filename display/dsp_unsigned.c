@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 12:57:46 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/03 09:35:17 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/03 11:18:35 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,15 @@ static int		ft_number(t_format f, unsigned int nb, int base)
 	return (nb / ft_recursive_power(10, a));
 }
 
-void	dsp_unsigned(t_format f, unsigned int nb, char *base)
+int				dsp_unsigned(t_format f, unsigned int nb, char *base)
 {
 	int		a;
+	int		len;
 
 	a = ft_space(f, nb, ft_strlen(base));
+	len = a;
+	if ((nb >= 0 && ft_format('+', f.fl)) || nb < 0)
+		len++;
 	nb = ft_print_sign(f, nb, a);
 	if (ft_format(' ', f.fl))
 		write(1, " ", 1);
@@ -60,4 +64,5 @@ void	dsp_unsigned(t_format f, unsigned int nb, char *base)
 		ft_putlongnbr(ft_number(f, nb, ft_strlen(base)), base);
 	if (ft_format('-', f.fl))
 		ft_time(' ', a);
+	return (len + ft_u_nbrlen(nb, ft_strlen(base)));
 }
