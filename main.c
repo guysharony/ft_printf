@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/03 08:13:04 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/03 08:39:50 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,5 +180,53 @@ int		main(void)
 	printf("<---|%05.1u %3.4u %-4.7u|\n", 45, -1789, 147);
 	ft_printf(">---|%.u|\n", 0);
 	printf("<---|%.u|\n", 0);
+
+	printf("\n___ Testing [%%x & %%X] ___\n");
+	ft_printf(">---|%x|\n", 0);
+	printf("<---|%x|\n", 0);
+	ft_printf(">---|%X|\n", 0xa0);
+	printf("<---|%X|\n", 0xa0);
+	ft_printf(">---|%x|\n", 0xa0ffff);
+	printf("<---|%x|\n", 0xa0ffff);
+	ft_printf(">---|%x|\n", -12345678);
+	printf("<---|%x|\n", -12345678);
+	ft_printf(">---|%X|\n", 0);
+	printf("<---|%X|\n", 0);
+	ft_printf(">---|%x|\n", 0x78aa);
+	printf("<---|%x|\n", 0x78aa);
+	ft_printf(">---|%X|\n", 0xff7744);
+	printf("<---|%X|\n", 0xff7744);
+	ft_printf(">---|%.x|\n", 12);
+	printf("<---|%.x|\n", 12);
+	ft_printf(">---|%.0X|\n", 0xaabbcc);
+	printf("<---|%.0X|\n", 0xaabbcc);
+	ft_printf(">---|%.2X|\n", 0x11aabbcc);
+	printf("<---|%.2X|\n", 0x11aabbcc);
+	ft_printf(">---|%.10x|\n", 0x1234abcd);
+	printf("<---|%.10x|\n", 0x1234abcd);
+	ft_printf(">---|%.4x|\n", 0x78);
+	printf("<---|%.4x|\n", 0x78);
+	ft_printf(">---|%3x|\n", 0xa43);
+	printf("<---|%3x|\n", 0xa43);
+	ft_printf(">---|%1X|\n", 0xa3);
+	printf("<---|%1X|\n", 0xa3);
+	ft_printf(">---|%4x|\n", 0xdd);
+	printf("<---|%4x|\n", 0xdd);
+	ft_printf(">---|%011X|\n", 0xdd66);
+	printf("<---|%011X|\n", 0xdd66);
+	ft_printf(">---|%-6x|\n", 0xdd66);
+	printf("<---|%-6x|\n", 0xdd66);
+	ft_printf(">---|%-2x|\n", 0xadd66);
+	printf("<---|%-2x|\n", 0xadd66);
+	ft_printf(">---|%20x|\n", 0x123456bc);
+	printf("<---|%20x|\n", 0x123456bc);
+	ft_printf(">---|test%---10.6x et %01X !!\n|\n", 0xaabb, 0);
+	printf("<---|test%---10.6x et %01X !!\n|\n", 0xaabb, 0);
+	ft_printf(">---|t %7.5X%0006.2x!|\n", 0xab, 0x876);
+	printf("<---|t %7.5X%0006.2x!|\n", 0xab, 0x876);
+	ft_printf(">---|toto %00.4X%4.2xet c'est fini \n|\n", 0x037a, 0x9e);
+	printf("<---|toto %00.4X%4.2xet c'est fini \n|\n", 0x037a, 0x9e);
+	ft_printf(">---|cc%.4X et %0012x %04X !!|\n", 0xaef, 0xe, 0);
+	printf("<---|cc%.4X et %0012x %04X !!|\n", 0xaef, 0xe, 0);
 	return (0);
 }
