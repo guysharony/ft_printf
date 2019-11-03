@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:32:41 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/01 11:15:19 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/03 10:01:53 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,16 @@ int		ft_printf(const char *str, ...)
 
 	a = 0;
 	va_start(c, str);
-	while ((b = *str) != '\0')
+	while ((b = *str++) != '\0')
 	{
-		str++;
-		if (b != '%')
+		if (b != '%' || *str == '%')
 		{
-			ft_putchar(b);
-			a++;
+			if (b != '%')
+				ft_putchar(b);
+			else
+				ft_putchar(*str++);
 			continue ;
 		}
-		else
-			if (*str == '%')
-			{
-				write(1, "%", 1);
-				str++;
-				continue ;
-			}
 		str = ft_flags(str, c);
 	}
 	va_end(c);
