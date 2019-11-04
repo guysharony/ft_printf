@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 07:04:07 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/03 11:10:50 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/04 09:22:49 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,14 @@ static int		ft_space(t_format f, int nb)
 	int		a;
 
 	a = f.wi;
+	if ((a > 0 && ft_format('+', f.fl)) || nb < 0)
+		a--;
 	if (f.pr > 0 && (f.pr < (int)ft_nbrlen(nb, 10) || f.pr < f.wi))
 		a -= f.pr;
 	else
 		a -= ft_nbrlen(nb, 10);
-	if (ft_format('+', f.fl) || nb < 0)
-		return (a - 1);
+	if (a < 0)
+		return (0);
 	return (a);
 }
 
@@ -44,8 +46,7 @@ static int		ft_number(t_format f, long long nb)
 		a -= ft_nbrlen(nb, 10);
 	else
 		a = f.pr;
-	ft_time('0', f.pr - (ft_nbrlen(nb, 10) - a));
-	return (nb / ft_recursive_power(10, a));
+	return (a);
 }
 
 void			ft_time(char c, int n)
@@ -56,19 +57,24 @@ void			ft_time(char c, int n)
 
 int				dsp_number(t_format f, long long nb)
 {
-	int		a;
-	int		len;
+	int				nb_space;
+	int				nb_zero;
+	long long		nb_value;
+	int				len;
 
-	a = ft_space(f, nb);
-	len = a;
-	if ((nb >= 0 && ft_format('+', f.fl)) || nb < 0)
-		len++;
-	nb = ft_print_sign(f, nb, a);
-	if (ft_format(' ', f.fl) && len++)
-		write(1, " ", 1);
+	nb_space = ft_space(f, nb);
+	nb_zero = f.pr - (ft_nbrlen(nb, 10) - ft_number(f, nb));
+	nb_value = nb / ft_recursive_power(10, ft_number(f, nb));
+	len = ft_print_before(f, nb_value, nb_space, nb_zero);
+	if (nb_value < 0)
+		nb_value *= -1;
+	ft_time('0', nb_zero);
 	if (!(f.pr == 0 && nb == 0))
-		ft_putnbr_base(ft_number(f, nb), "0123456789");
+	{
+		len += ft_nbrlen(nb_value, 10);
+		ft_putnbr_base(nb_value, "0123456789");
+	}
 	if (ft_format('-', f.fl))
-		ft_time(' ', a);
-	return (len + ft_nbrlen(nb, 10));
+		ft_time(' ', nb_space);
+	return (len);
 }

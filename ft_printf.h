@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/03 11:59:17 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/04 09:00:38 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ int					ft_format(char c, char *format);
 int					ft_nbrlen(long long nb, int base);
 int					ft_u_nbrlen(unsigned int nb, int base);
 int					ft_sign(t_format f, long long nb);
-int					ft_print_sign(t_format f, long long nb, int space);
+int					ft_print_before(t_format f, long long nb, int space, int zero);
 
 #endif
