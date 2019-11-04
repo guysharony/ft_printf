@@ -6,12 +6,11 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/04 09:46:59 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/04 12:05:51 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#include <stdio.h>
 
 static t_format		fl_init(void)
 {
@@ -64,6 +63,16 @@ int					ft_format(char c, char *format)
 	return (0);
 }
 
+int					ft_format_count(const char *format, char *flags)
+{
+	int		a;
+
+	a = 0;
+	while (ft_format(format[a], flags))
+		a++;
+	return (a);
+}
+
 t_print				ft_flags(const char *format, va_list list)
 {
 	int				a;
@@ -72,15 +81,13 @@ t_print				ft_flags(const char *format, va_list list)
 
 	a = 0;
 	f = fl_init();
-	while (ft_format(format[a], "-+ #0"))
-		a++;
+	a += ft_format_count(format, "-+ #0");
 	f.fl = ft_substr(format, 0, a);
 	if (format[a] == '*')
 		f.wi = (int)va_arg(list, int);
 	else if (format[a] >= '0' && format[a] <= '9')
 		f.wi = ft_atoi(format + a);
-	while (ft_format(format[a], "0123456789*"))
-		a++;
+	a += ft_format_count(format + a, "0123456789*");
 	if (format[a] == '.' && format[a + 1] == '*')
 		f.pr = (int)va_arg(list, int);
 	else if (format[a] == '.')
@@ -90,5 +97,6 @@ t_print				ft_flags(const char *format, va_list list)
 	f.vl = format[a];
 	p.len = ft_conv(f, list);
 	p.str = (char *)format + a + 1;
+	free(f.fl);
 	return (p);
 }
