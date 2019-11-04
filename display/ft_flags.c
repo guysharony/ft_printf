@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/03 11:09:45 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/04 09:46:59 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,26 @@ static t_format		fl_init(void)
 
 static int			ft_conv(t_format f, va_list list)
 {
+	unsigned int	nbr;
+
 	if (f.vl == 'd' || f.vl == 'i')
 		return (dsp_number(f, (long long)va_arg(list, int)));
 	else if (f.vl == 'c')
-		return (dsp_char(f, (int)va_arg(list, int)));
+		return (dsp_char(f, va_arg(list, int)));
 	else if (f.vl == 's')
-		return (dsp_str(f, (char *)va_arg(list, char *)));
+		return (dsp_str(f, va_arg(list, char *)));
 	else if (f.vl == 'p')
-		return (dsp_adress(f, (void *)va_arg(list, void *)));
-	else if (f.vl == 'u')
-		return (dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int), "0123456789"));
-	else if (f.vl == 'x')
-		return (dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int), "0123456789abcdef"));
-	else if (f.vl == 'X')
-		return (dsp_unsigned(f, (unsigned int)va_arg(list, unsigned int), "0123456789ABCDEF"));
+		return (dsp_adress(f, va_arg(list, void *)));
+	else if (f.vl == 'u' || f.vl == 'x' || f.vl == 'X')
+	{
+		nbr = va_arg(list, unsigned int);
+		if (f.vl == 'u')
+			return (dsp_unsigned(f, nbr, "0123456789"));
+		else if (f.vl == 'x')
+			return (dsp_unsigned(f, nbr, "0123456789abcdef"));
+		else if (f.vl == 'X')
+			return (dsp_unsigned(f, nbr, "0123456789ABCDEF"));
+	}
 	return (-1);
 }
 

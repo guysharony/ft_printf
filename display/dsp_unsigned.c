@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 12:57:46 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/04 09:36:28 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/04 09:50:57 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,9 @@ int				dsp_unsigned(t_format f, unsigned int nb, char *base)
 	int					len;
 
 	nb_space = ft_space(f, nb, ft_strlen(base));
-	nb_zero = f.pr - (ft_u_nbrlen(nb, ft_strlen(base)) - ft_number(f, nb, ft_strlen(base)));
-	nb_value = nb / ft_recursive_power(ft_strlen(base), ft_number(f, nb, ft_strlen(base)));
+	nb_value = ft_number(f, nb, ft_strlen(base));
+	nb_zero = f.pr - (ft_u_nbrlen(nb, ft_strlen(base)) - nb_value);
+	nb_value = nb / ft_recursive_power(ft_strlen(base), nb_value);
 	len = ft_print_before(f, nb_value, nb_space, nb_zero);
 	nb_value = ft_sign(f, nb_value);
 	ft_time('0', nb_zero);
