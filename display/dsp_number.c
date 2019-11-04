@@ -6,20 +6,11 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 07:04:07 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/04 09:22:49 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/04 11:35:27 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-static int		ft_recursive_power(int nb, int power)
-{
-	if (power < 0)
-		return (0);
-	else if (power == 0)
-		return (1);
-	return (nb * ft_recursive_power(nb, power - 1));
-}
 
 static int		ft_space(t_format f, int nb)
 {
@@ -64,7 +55,7 @@ int				dsp_number(t_format f, long long nb)
 
 	nb_space = ft_space(f, nb);
 	nb_zero = f.pr - (ft_nbrlen(nb, 10) - ft_number(f, nb));
-	nb_value = nb / ft_recursive_power(10, ft_number(f, nb));
+	nb_value = nb / ft_pow(10, ft_number(f, nb));
 	len = ft_print_before(f, nb_value, nb_space, nb_zero);
 	if (nb_value < 0)
 		nb_value *= -1;

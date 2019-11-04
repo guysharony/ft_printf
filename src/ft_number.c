@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 12:47:24 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/03 11:09:00 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/04 11:31:33 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,13 @@ void	ft_putlongnbr(unsigned int nb, char *base)
 	}
 	else
 		ft_putchar_base(nb, base);
+}
+
+int		ft_pow(int nb, int power)
+{
+	if (power < 0)
+		return (0);
+	else if (power == 0)
+		return (1);
+	return (nb * ft_pow(nb, power - 1));
 }
