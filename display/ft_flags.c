@@ -6,11 +6,12 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/06 08:40:49 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/06 14:44:03 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+#include <stdio.h>
 
 static t_format		fl_init(void)
 {
@@ -51,28 +52,46 @@ static int			ft_conv(t_format f, va_list list)
 	return (-1);
 }
 
-int					ft_format(char c, char *format)
+t_print				ft_width(const char *format, int a, va_list list)
 {
-	int		a;
+	t_print		p;
 
-	a = 0;
-	while (format[a])
+	p.status = 0;
+	p.len = -1;
+	if (format[a] == '*')
 	{
-		if (format[a] == c)
-			return (1);
-		a++;
+		p.len = (int)va_arg(list, int);
+		p.status++;
 	}
-	return (0);
+	else if (format[a] >= '0' && format[a] <= '9')
+	{
+		p.len = ft_atoi(format + a);
+		p.status += ft_format_count(format + a, "0123456789");
+	}
+	else
+		p.status = 0;
+	return (p);
 }
 
-int					ft_format_count(const char *format, char *flags)
+t_print				ft_precision(const char *format, int a, va_list list)
 {
-	int		a;
+	t_print		p;
 
-	a = 0;
-	while (ft_format(format[a], flags))
-		a++;
-	return (a);
+	p.status = 0;
+	p.len = -1;
+	if (format[a] == '.' && format[a + 1] == '*')
+	{
+		p.len = (int)va_arg(list, int);
+		p.status++;
+	}
+	else if (format[a] == '.')
+	{
+		p.len = ft_atoi(format + a + 1);
+		p.status += ft_format_count(format + a + 1, "0123456789") + 1;
+	}
+	else
+		p.status = 0;
+	return (p);
 }
 
 t_print				ft_flags(const char *format, va_list list)
@@ -81,21 +100,20 @@ t_print				ft_flags(const char *format, va_list list)
 	t_format		f;
 	t_print			p;
 
-	a = 0;
 	f = fl_init();
-	a += ft_format_count(format, "-+ #0");
+	p.len = 0;
+	a = ft_format_count(format, "-+ #0");
 	f.fl = ft_substr(format, 0, a);
-	if (format[a] == '*')
-		f.wi = (int)va_arg(list, int);
-	else if (format[a] >= '0' && format[a] <= '9')
-		f.wi = ft_atoi(format + a);
-	a += ft_format_count(format + a, "0123456789*");
-	if (format[a] == '.' && format[a + 1] == '*')
-		f.pr = (int)va_arg(list, int);
-	else if (format[a] == '.')
-		f.pr = ft_atoi(format + a + 1);
-	while (!ft_format(format[a], "dicspuxX%"))
-		a++;
+	p = ft_width(format, a, list);
+	if (p.status == -1)
+		return (p);
+	f.wi = p.len;
+	a += p.status;
+	p = ft_precision(format, a, list);
+	if (p.status == -1)
+		return (p);
+	f.pr = p.len;
+	a += p.status;
 	f.vl = format[a];
 	p.len = ft_conv(f, list);
 	p.str = (char *)format + a + 1;
