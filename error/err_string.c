@@ -1,40 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   err_string.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 14:32:41 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/06 08:38:18 by gsharony         ###   ########.fr       */
+/*   Created: 2019/11/06 08:18:23 by gsharony          #+#    #+#             */
+/*   Updated: 2019/11/06 08:31:14 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int		ft_printf(const char *str, ...)
+int		err_char(t_format f, int c)
 {
-	int			a;
-	char		b;
-	va_list		c;
-	t_print		p;
-
-	a = 0;
-	va_start(c, str);
-	while ((b = *str++) != '\0')
-	{
-		if (b != '%')
-		{
-			ft_putchar(b);
-			a++;
-			continue ;
-		}
-		p = ft_flags(str, c);
-		if (p.len == -1)
-			return (-1);
-		str = p.str;
-		a += p.len;
-	}
-	va_end(c);
-	return (a);
+	(void)c;
+	if (f.pr >= 0 || ft_format('+', f.fl))
+		return (1);
+	return (0);
 }

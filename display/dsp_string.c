@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:36:30 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/03 12:17:55 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/06 08:24:13 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int				dsp_char(t_format f, int c)
 {
 	int		a;
 
+	if (err_char(f, c))
+		return (-1);
 	a = f.wi - 1;
 	if (!ft_format('-', f.fl))
 		ft_time(' ', a);

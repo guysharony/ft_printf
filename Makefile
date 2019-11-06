@@ -6,7 +6,7 @@
 #    By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/22 09:39:55 by gsharony          #+#    #+#              #
-#    Updated: 2019/11/02 17:02:12 by guysharon        ###   ########.fr        #
+#    Updated: 2019/11/06 08:50:07 by gsharony         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ DIR_1		= ./src/
 
 DIR_2		= ./display/
 
-SRCS		= ft_printf.c ${DIR_1}ft_string.c ${DIR_1}ft_number.c ${DIR_1}ft_adress.c ${DIR_1}ft_len.c ${DIR_2}ft_flags.c ${DIR_2}dsp_number.c ${DIR_2}dsp_string.c ${DIR_2}dsp_number_utils.c
+DIR_3		= ./error/
+
+SRCS		= ft_printf.c ${DIR_1}ft_string.c ${DIR_1}ft_number.c ${DIR_1}ft_adress.c ${DIR_1}ft_len.c ${DIR_2}ft_flags.c ${DIR_2}dsp_number.c ${DIR_2}dsp_string.c ${DIR_2}dsp_number_utils.c ${DIR_2}dsp_pc.c ${DIR_3}err_string.c
 
 OBJECTS		= ${SRCS:.c=.o}
 

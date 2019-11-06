@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/04 12:07:08 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/06 08:52:19 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,12 @@ int		main(void)
 	ft_check(c, d);
 	c = ft_printf(">---|%%%%|\n");
 	d = printf("<---|%%%%|\n");
+	ft_check(c, d);
+	c = ft_printf(">---|%5%|\n");
+	d = printf("<---|%5%|\n");
+	ft_check(c, d);
+	c = ft_printf(">---|%05%|\n");
+	d = printf("<---|%05%|\n");
 	ft_check(c, d);
 
 	printf("\n___ Testing [%%c] ___ \n");
