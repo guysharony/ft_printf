@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dsp_adress.c                                       :+:      :+:    :+:   */
+/*   err_adress.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/31 11:57:19 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/06 09:21:22 by gsharony         ###   ########.fr       */
+/*   Created: 2019/11/06 09:15:26 by gsharony          #+#    #+#             */
+/*   Updated: 2019/11/06 09:21:43 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		dsp_adress(t_format f, void *str)
+int		err_adress(t_format f, void *p)
 {
-	int		a;
-
-	if (err_adress(f, str))
-		return (-1);
-	f.wi -= ft_nbrlen((long long)str, 16) + 2;
-	if (!ft_format('-', f.fl))
-		ft_time(' ', f.wi);
-	a = ft_print_adress(str);
-	if (ft_format('-', f.fl))
-		ft_time(' ', f.wi);
-	if (f.wi > 0)
-		return (f.wi + a);
-	return (a);
+	(void)p;
+	if (ft_format('+', f.fl) || ft_format('0', f.fl) || ft_format(' ', f.fl))
+		return (1);
+	if (ft_format('#', f.fl) || f.pr >= 0)
+		return (1);
+	if (ft_format(' ', f.fl) && ft_format('+', f.fl))
+		return (1);
+	if (ft_format('0', f.fl) && ft_format('-', f.fl))
+		return (1);
+	return (0);
 }
