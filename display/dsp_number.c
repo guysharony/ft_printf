@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 07:04:07 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/04 11:35:27 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/06 09:38:52 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int				dsp_number(t_format f, long long nb)
 	long long		nb_value;
 	int				len;
 
+	if (err_number(f, nb))
+		return (-1);
 	nb_space = ft_space(f, nb);
 	nb_zero = f.pr - (ft_nbrlen(nb, 10) - ft_number(f, nb));
 	nb_value = nb / ft_pow(10, ft_number(f, nb));
