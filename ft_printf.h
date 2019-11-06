@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/06 08:53:58 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/06 09:12:49 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int					dsp_adress(t_format f, void *str);
 int					dsp_pc(t_format f);
 
 int					err_char(t_format f, int c);
+int					err_str(t_format f, char *str);
 
 void				ft_putstr(char *str);
 void				ft_putnbr(int nb);
