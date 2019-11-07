@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:20:28 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/06 14:36:02 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/07 09:53:28 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,6 +194,9 @@ int		main(void)
 	c = ft_printf(">---|%5d|\n", -741);
 	d = printf("<---|%5d|\n", -741);
 	ft_check(c, d);
+	c = ft_printf(">---|%4.8d|\n", 45);
+	d = printf("<---|%4.8d|\n", 45);
+	ft_check(c, d);
 	c = ft_printf(">---|hello % .d this is a test|\n", 0);
 	d = printf("<---|hello % .d this is a test|\n", 0);
 	ft_check(c, d);
@@ -213,6 +216,9 @@ int		main(void)
 	ft_check(c, d);
 	c = ft_printf(">---|%-2i|\n", -7);
 	d = printf("<---|%-2i|\n", -7);
+	ft_check(c, d);
+	c = ft_printf(">---|%4.8i|\n", 45);
+	d = printf("<---|%4.8i|\n", 45);
 	ft_check(c, d);
 	c = ft_printf(">---|%.0i|\n", 0);
 	d = printf("<---|%.0i|\n", 0);
@@ -254,6 +260,9 @@ int		main(void)
 	ft_check(c, d);
 	c = ft_printf(">---|%-3u|\n", 194);
 	d = printf("<---|%-3u|\n", 194);
+	ft_check(c, d);
+	c = ft_printf(">---|%15.20u|\n", -45);
+	d = printf("<---|%15.20u|\n", -45);
 	ft_check(c, d);
 	c = ft_printf(">---|toto et %02u coco %-5u mimi|\n", 19, -20);
 	d = printf("<---|toto et %02u coco %-5u mimi|\n", 19, -20);

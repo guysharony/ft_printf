@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:36:30 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/06 09:13:27 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/07 09:22:41 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int		ft_space(t_format f, char *str)
 	int		len;
 
 	len = f.wi;
-	if (f.pr >= 0 && (f.pr < (int)ft_strlen(str) || f.pr < f.wi))
+	if (f.pr >= 0 && (f.pr < (int)ft_strlen(str) && f.pr < f.wi))
 		len -= f.pr;
 	else
 		len -= ft_strlen(str);
