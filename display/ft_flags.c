@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/08 17:47:41 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/08 18:01:02 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,26 +95,25 @@ t_print				ft_precision(const char *format, int a, va_list list)
 t_print				ft_flags(const char *format, va_list list)
 {
 	int				a;
+	int				b;
 	t_format		f;
 	t_print			p;
 
 	f = fl_init();
-	p.len = 0;
-	a = ft_format_count(format, "-+ #0");
-	f.fl = ft_substr(format, 0, a);
-	p = ft_width(format, a, list);
-	f.wi = p.len;
-	a += p.status;
-	while (!ft_isalpha(format[a]) && format[a] != '%')
+	a = 0;
+	b = 0;
+	while (!ft_isalpha(format[a]) && format[a] != '%' && format[a] != '-')
 	{
-		if (format[a] == '.')
-		{
-			p = ft_precision(format, a, list);
-			f.pr = p.len;
-			a += p.status;
-		}
-		else
-			a++;
+		p.len = 0;
+		b = a;
+		a += ft_format_count(format + b, "-+ #0");
+		f.fl = ft_substr(format + b, 0, a);
+		p = ft_width(format + b, a, list);
+		f.wi = p.len;
+		a += p.status;
+		p = ft_precision(format + b, a, list);
+		f.pr = p.len;
+		a += p.status;
 	}
 	f.vl = format[a];
 	p.len = ft_conv(f, list);
