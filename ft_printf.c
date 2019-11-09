@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:32:41 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/08 17:50:59 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/09 16:58:48 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int		ft_printf(const char *str, ...)
 			continue ;
 		}
 		p = ft_flags(str, c);
+		if (p.len == -1)
+			continue ;
 		str = p.str;
 		a += p.len;
 	}
