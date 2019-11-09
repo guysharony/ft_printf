@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/06 13:03:41 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/09 13:48:32 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct		s_format
 {
 	char			*fl;
 	char			vl;
-	char			*le;
+	int				po;
 	int				wi;
 	int				pr;
 }					t_format;
@@ -41,6 +41,7 @@ t_print				ft_flags(const char *format, va_list list);
 void				ft_time(char c, int n);
 int					ft_format(char c, char *format);
 int					ft_format_count(const char *format, char *flags);
+t_format			ft_get_params(const char *format, t_format f, va_list list);
 
 int					err_char(t_format f, int c);
 int					err_str(t_format f, char *str);

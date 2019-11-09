@@ -6,12 +6,11 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/09 13:15:01 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/09 13:49:49 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#include <stdio.h>
 
 static t_format		fl_init(void)
 {
@@ -19,6 +18,7 @@ static t_format		fl_init(void)
 
 	f.fl = NULL;
 	f.vl = 0;
+	f.po = 0;
 	f.wi = -1;
 	f.pr = -1;
 	return (f);
@@ -51,74 +51,16 @@ static int			ft_conv(t_format f, va_list list)
 	return (-1);
 }
 
-t_print				ft_width(const char *format, int a, va_list list)
-{
-	t_print		p;
-
-	p.status = 0;
-	if (format[a] == '*')
-	{
-		p.len = (int)va_arg(list, int);
-		p.status++;
-	}
-	else if (format[a] >= '0' && format[a] <= '9')
-	{
-		p.len = ft_atoi(format + a);
-		p.status += ft_format_count(format + a, "0123456789");
-	}
-	else
-		p.status = 0;
-	return (p);
-}
-
-t_print				ft_precision(const char *format, int a, va_list list)
-{
-	t_print		p;
-
-	p.status = 0;
-	if (format[a] == '.' && format[a + 1] == '*')
-	{
-		p.len = (int)va_arg(list, int);
-		p.status++;
-	}
-	else if (format[a] == '.')
-	{
-		p.len = ft_atoi(format + a + 1);
-		p.status += ft_format_count(format + a + 1, "0123456789") + 1;
-	}
-	return (p);
-}
-
 t_print				ft_flags(const char *format, va_list list)
 {
-	int				a;
 	t_format		f;
 	t_print			p;
 
 	f = fl_init();
-	a = 0;
-	while (!ft_isalpha(format[a]) && format[a] != '%')
-	{
-		if (ft_format(format[a], "-+0"))
-		{
-			f.fl = ft_strjoin(f.fl, &format[a]);
-			a++;
-		}
-		else if (ft_format(format[a], "0123456789*"))
-		{
-			p = ft_width(format, a, list);
-			f.wi = p.len;
-			a += p.status;
-		}
-		else if (format[a] == '.')
-		{
-			p = ft_precision(format, a, list);
-			f.pr = p.len;
-			a += p.status;
-		}
-	}
-	f.vl = format[a];
+	while (ft_format(format[f.po], "-.0123456789*"))
+		f = ft_get_params(format, f, list);
+	f.vl = format[f.po];
 	p.len = ft_conv(f, list);
-	p.str = (char *)format + a + 1;
+	p.str = (char *)format + f.po + 1;
 	return (p);
 }
