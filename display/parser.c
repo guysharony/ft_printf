@@ -26,6 +26,7 @@ static t_print		ft_precision(const char *format, int a, va_list list)
 	t_print		p;
 
 	p.status = 0;
+	p.len = 0;
 	if (format[a] == '*')
 	{
 		while (format[p.status + a] == '*')
@@ -40,6 +41,8 @@ static t_print		ft_precision(const char *format, int a, va_list list)
 		p.len = ft_atoi(format + a);
 		p.status += ft_format_count(format + a, "0123456789") + 1;
 	}
+	else
+		p.status++;
 	return (p);
 }
 
