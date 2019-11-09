@@ -335,7 +335,6 @@ int main() {
 		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
 		i = ft_printf("|%-0*..-.5p|\n", -30, ptr_2);
 		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
-
 		printf("\033[0;36m======================= TEST\033[0m 4\n");
 		i = printf("|%020...5p|\n", ptr_3);
 			fflush(stdout);
