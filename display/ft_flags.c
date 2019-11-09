@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/09 13:11:00 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/09 13:15:01 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static t_format		fl_init(void)
 
 	f.fl = NULL;
 	f.vl = 0;
-	f.le = NULL;
 	f.wi = -1;
 	f.pr = -1;
 	return (f);
@@ -57,7 +56,6 @@ t_print				ft_width(const char *format, int a, va_list list)
 	t_print		p;
 
 	p.status = 0;
-	p.len = -1;
 	if (format[a] == '*')
 	{
 		p.len = (int)va_arg(list, int);
@@ -78,7 +76,6 @@ t_print				ft_precision(const char *format, int a, va_list list)
 	t_print		p;
 
 	p.status = 0;
-	p.len = -1;
 	if (format[a] == '.' && format[a + 1] == '*')
 	{
 		p.len = (int)va_arg(list, int);
@@ -104,7 +101,7 @@ t_print				ft_flags(const char *format, va_list list)
 	{
 		if (ft_format(format[a], "-+0"))
 		{
-			f.fl = ft_strjoin(f.fl, ft_substr(format, a, a));
+			f.fl = ft_strjoin(f.fl, &format[a]);
 			a++;
 		}
 		else if (ft_format(format[a], "0123456789*"))
