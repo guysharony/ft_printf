@@ -6,11 +6,12 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/09 13:49:49 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/09 14:00:28 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+#include <stdio.h>
 
 static t_format		fl_init(void)
 {

@@ -6,11 +6,12 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/03 07:15:11 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/04 09:51:58 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/09 14:24:23 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+#include <stdio.h>
 
 int				ft_sign(t_format f, long long nb)
 {

@@ -3,6 +3,6 @@
 
 int		main(void)
 {
-	ft_printf("%-24..-.12..9.7d\n", 42);
+	ft_printf("%d\n", 42);
 	return (0);
 }

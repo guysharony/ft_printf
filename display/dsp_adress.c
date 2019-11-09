@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:57:19 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/06 09:21:22 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/09 14:09:02 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int		dsp_adress(t_format f, void *str)
 {
 	int		a;
 
-	if (err_adress(f, str))
-		return (-1);
 	f.wi -= ft_nbrlen((long long)str, 16) + 2;
 	if (!ft_format('-', f.fl))
 		ft_time(' ', f.wi);
