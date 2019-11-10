@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:57:19 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 03:57:15 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/10 04:06:36 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ t_format		ft_var(t_format f, void *str)
 
 void			ft_print_after(void *str, t_format f)
 {
-	if (ft_format('-', f.fl) || (ft_format('0', f.fl) && str == NULL && f.pr <= 0))
+	if (ft_format('-', f.fl) || (ft_format('0', f.fl) && str == NULL && f.pr < 0))
 	{
 		if (str == NULL)
 			write(1, "0x", 2);
-		if (ft_format('0', f.fl) && f.pr <= 0 && str == NULL)
+		if (ft_format('0', f.fl) && f.pr < 0 && str == NULL)
 			ft_time('0', f.wi);
 		else
 		{
@@ -50,7 +50,7 @@ int				dsp_adress(t_format f, void *str)
 
 	if (f.pr >= 0 || f.wi >= 0)
 		f = ft_var(f, str);
-	if (!ft_format('-', f.fl) && f.pr > 0)
+	if (!ft_format('-', f.fl) && f.pr >= 0)
 	{
 		ft_time(' ', f.wi);
 		if (str == NULL)
