@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:36:30 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 06:43:09 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/10 11:10:57 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,12 @@ int				dsp_str(t_format f, char *str)
 	a = ft_space(f, str);
 	b = ft_string(f, str);
 	if (!ft_format('-', f.fl))
-		ft_time(' ', a);
+	{
+		if (ft_format('0', f.fl))
+			ft_time('0', a);
+		else
+			ft_time(' ', a);
+	}
 	len = ft_putnstr(str, b);
 	if (ft_format('-', f.fl))
 		ft_time(' ', a);

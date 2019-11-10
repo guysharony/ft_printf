@@ -6,12 +6,11 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:57:19 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 08:22:36 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/10 12:59:58 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#include <stdio.h>
 
 t_format		ft_var(t_format f, void *str)
 {
@@ -29,40 +28,31 @@ t_format		ft_var(t_format f, void *str)
 	return (f);
 }
 
-void			ft_print_after(void *str, t_format f)
+void			ft_after(void *str, t_format f)
 {
-	if (ft_format('-', f.fl) || (ft_format('0', f.fl) && str == NULL && f.pr < 0))
+	(void)str;
+	if (ft_format('-', f.fl))
+		ft_time(' ', f.wi);
+}
+
+void			ft_before(void *str, t_format f)
+{
+	(void)str;
+	if (!ft_format('-', f.fl))
 	{
-		if (str == NULL)
-			write(1, "0x", 2);
-		if (ft_format('0', f.fl) && f.pr < 0 && str == NULL)
-			ft_time('0', f.wi);
-		else
-		{
-			if (str == NULL)
-				ft_time('0', f.pr);
+		if (!ft_format('0', f.fl))
 			ft_time(' ', f.wi);
-		}
+		else if (ft_format('0', f.fl) && f.wi > f.pr && f.pr >= 0)
+			ft_time(' ', f.wi);
 	}
 }
 
 int				dsp_adress(t_format f, void *str)
 {
-	int		a;
-
-	if (f.pr >= 0 || f.wi >= 0)
-		f = ft_var(f, str);
-	if (!ft_format('-', f.fl) && f.pr >= 0)
-	{
-		ft_time(' ', f.wi);
-		if (str == NULL)
-			write(1, "0x", 2);
-		ft_time('0', f.pr);
-	}
-	if (str != NULL || (str == NULL && f.pr == -1 && f.wi == -1))
-		a = ft_print_adress(str, f);
-	ft_print_after(str, f);
-	if (f.wi > 0)
-		return (f.wi + a);
-	return (a);
+	f = ft_var(f, str);
+	ft_before(str, f);
+	write(1, "0x", 2);
+	ft_print_adress(str, f);
+	ft_after(str, f);
+	return (f.wi);
 }
