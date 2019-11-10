@@ -40,18 +40,20 @@ static t_print		ft_precision(const char *format, int a, va_list list)
 	return (p);
 }
 
-t_format			ft_checker(t_format f, t_print p, char b, int add)
+t_format			ft_checker(t_format f, t_print p, int add)
 {
 	char	*tmp;
 
 	tmp = NULL;
-	if (p.len < 0 && (f.wi < p.len * -1 || b == '*' || add == 0))
+	if (p.len < 0)
 	{
 		tmp = f.fl;
 		f.fl = ft_strjoin(tmp, "-");
 		free(tmp);
-		if (b != '.' && f.wi < p.len * -1)
+		if (add == 0)
 			f.wi = p.len * -1;
+		else if (add == 1)
+			f.pr = 0;
 	}
 	else if (add == 1)
 		f.pr = p.len;
@@ -79,13 +81,13 @@ t_format			ft_get_params(const char *format, t_format f, va_list list)
 	else if (ft_format(format[f.po], "123456789*"))
 	{
 		p = ft_width(format, f.po, list);
-		f = ft_checker(f, p, format[p.status - 1], 0);
+		f = ft_checker(f, p, 0);
 	}
 	else if (format[f.po] == '.')
 	{
 		f.po++;
 		p = ft_precision(format, f.po, list);
-		f = ft_checker(f, p, format[p.status - 1], 1);
+		f = ft_checker(f, p, 1);
 	}
 	return (f);
 }
