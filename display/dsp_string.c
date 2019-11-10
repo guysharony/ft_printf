@@ -6,11 +6,12 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:36:30 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 11:10:57 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/10 14:04:09 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+#include <stdio.h>
 
 static int		ft_space(t_format f, char *str)
 {
@@ -36,6 +37,8 @@ int				dsp_char(t_format f, int c)
 	int		a;
 
 	a = f.wi - 1;
+	if (f.pr > 0 && f.wi > 0 && f.pr < f.wi && !ft_format('0', f.fl))
+		a = f.pr - 1;
 	if (!ft_format('-', f.fl))
 	{
 		if (ft_format('0', f.fl))
