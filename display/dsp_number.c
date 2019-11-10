@@ -6,42 +6,12 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 07:04:07 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 14:41:00 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/10 22:01:33 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 #include <stdio.h>
-
-static int		ft_space(t_format f, int nb)
-{
-	int		a;
-
-	a = f.wi;
-	if ((a > 0 && ft_format('+', f.fl)) || nb < 0)
-		a--;
-	if (f.pr > 0 && (f.pr < (int)ft_nbrlen(nb, 10) || f.pr < f.wi))
-		a -= f.pr;
-	else
-		a -= ft_nbrlen(nb, 10);
-	if (ft_format('0', f.fl) && f.pr > 0 && f.pr < ft_nbrlen(nb, 10))
-		a += f.pr - ft_nbrlen(nb, 10);
-	if (a < 0)
-		return (0);
-	return (a);
-}
-
-static int		ft_number(t_format f, long long nb)
-{
-	int		a;
-
-	a = ft_nbrlen(nb, 10);
-	if (f.pr < 0 || f.pr >= a || f.pr < a)
-		a -= ft_nbrlen(nb, 10);
-	else
-		a = f.pr;
-	return (a);
-}
 
 void			ft_time(char c, int n)
 {
@@ -51,27 +21,24 @@ void			ft_time(char c, int n)
 
 int				dsp_number(t_format f, long long nb)
 {
-	int				nb_space;
-	int				nb_zero;
-	long long		nb_value;
-	int				len;
+	int		len;
 
-	nb_space = ft_space(f, nb);
-	nb_zero = f.pr - (ft_nbrlen(nb, 10) - ft_number(f, nb));
-	if (f.pr > f.wi && f.wi > 0)
-		nb_zero = ft_nbrlen(nb, 10) - ft_number(f, nb);
-	nb_value = nb / ft_pow(10, ft_number(f, nb));
-	len = ft_print_before(f, nb_value, nb_space, nb_zero);
-	if (nb_value < 0)
-		nb_value *= -1;
-	ft_time('0', nb_zero);
-	if (!(f.pr == 0 && nb == 0))
+	len = 0;
+	len += ft_size_number(nb, f);
+	if (f.wi > len)
 	{
-		len += ft_nbrlen(nb_value, 10);
-		ft_putnbr_base(nb_value, "0123456789");
+		if (!ft_format('-', f.fl) && (!ft_format('0', f.fl) || f.pr > 0))
+			ft_time(' ', f.wi - len);
+		else if (!ft_format('-', f.fl) && ft_format('0', f.fl) && f.pr < 0)
+			ft_time('0', f.wi - len);
 	}
-	printf("[%d]\n", nb_space);
-	if (ft_format('-', f.fl))
-		ft_time(' ', nb_space);
+	printf("[%d] - [%d] - [%d]\n", f.wi, f.pr, len);
+	ft_print_number(nb, f);
+	if (f.wi > len)
+	{
+		if (ft_format('-', f.fl))
+			ft_time(' ', f.wi - len);
+		len += (f.wi - len);
+	}
 	return (len);
 }

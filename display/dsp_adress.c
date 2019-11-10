@@ -6,12 +6,11 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:57:19 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 18:08:09 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/10 21:27:46 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#include <stdio.h>
 
 int		dsp_adress(t_format f, void *str)
 {
@@ -25,7 +24,6 @@ int		dsp_adress(t_format f, void *str)
 			ft_time(' ', f.wi - len);
 	}
 	ft_print_adress(str, f);
-	printf("[%d] - [%d] - [%d]\n", f.wi, f.pr, len);
 	if (f.wi > len)
 	{
 		if (ft_format('-', f.fl))
