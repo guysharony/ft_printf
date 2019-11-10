@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/09 13:48:32 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/10 08:20:31 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int					dsp_char(t_format f, int c);
 int					dsp_adress(t_format f, void *str);
 int					dsp_pc(t_format f);
 
-int					ft_print_adress(void *a);
+int					ft_print_adress(void *a, t_format f);
 int					ft_pow(int nb, int power);
 int					ft_putnstr(char *str, int len);
 int					ft_nbrlen(long long nb, int base);

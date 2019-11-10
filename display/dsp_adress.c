@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:57:19 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 04:26:02 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/10 08:22:36 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ void			ft_print_after(void *str, t_format f)
 			ft_time('0', f.wi);
 		else
 		{
-			ft_time('0', f.pr);
+			if (str == NULL)
+				ft_time('0', f.pr);
 			ft_time(' ', f.wi);
 		}
 	}
@@ -59,7 +60,7 @@ int				dsp_adress(t_format f, void *str)
 		ft_time('0', f.pr);
 	}
 	if (str != NULL || (str == NULL && f.pr == -1 && f.wi == -1))
-		a = ft_print_adress(str);
+		a = ft_print_adress(str, f);
 	ft_print_after(str, f);
 	if (f.wi > 0)
 		return (f.wi + a);
