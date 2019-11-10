@@ -3,7 +3,9 @@
 
 int		main(void)
 {
-	printf("|%-0*..-.5p|\n", -30, NULL);
-	ft_printf("|%-0*..-.5p|\n", -30, NULL);
+	int		a;
+
+	a = 42;
+	ft_printf("|ok %*.*p|\n", -20, -10, &a);
 	return (0);
 }

@@ -6,11 +6,12 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:57:19 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 04:06:36 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/10 04:26:02 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+#include <stdio.h>
 
 t_format		ft_var(t_format f, void *str)
 {

@@ -51,7 +51,7 @@ t_format			ft_checker(t_format f, t_print p, int add)
 	char	*tmp;
 
 	tmp = NULL;
-	if (p.len < 0)
+	if (p.len < 0 && f.wi < p.len * -1)
 	{
 		tmp = f.fl;
 		f.fl = ft_strjoin(tmp, "-");
@@ -60,7 +60,7 @@ t_format			ft_checker(t_format f, t_print p, int add)
 	}
 	else if (add == 1)
 		f.pr = p.len;
-	else if (add == 0)
+	else if (add == 0 && f.wi < p.len)
 		f.wi = p.len;
 	f.po += p.status;
 	return (f);
