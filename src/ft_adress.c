@@ -6,33 +6,49 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 13:09:56 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 13:24:33 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:17:34 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#include <stdio.h>
 
-int		ft_print_adress(void *a, t_format f)
+int		ft_size_adress(void *a, t_format f)
 {
 	int		len;
+	int		tmp;
 
-	len = ft_nbrlen((long long)a, 16);
-	if (f.pr > len)
-		ft_time('0', f.pr - len);
-	else if (f.wi > 0)
+	len = 2;
+	tmp = 0;
+	if (f.pr < 0)
+		len += ft_nbrlen((long long)a, 16);
+	else if (f.pr == 0)
 	{
-		if (ft_format('0', f.fl))
-		{
-			if (f.pr > f.wi)
-				ft_time('0', f.wi - len);
-			else if (f.pr < 0 && !ft_format('-', f.fl))
-				ft_time('0', f.wi - len);
-		}
+		if (a != NULL)
+			len += ft_nbrlen((long long)a, 16);
 	}
-	if (f.pr > f.wi && f.wi > 0)
-		ft_time('0', f.pr);
-	if (!(f.pr == 0 && a == NULL))
-		ft_putnbr_base((long long)a, "0123456789abcdef");
+	else if (f.pr > 0)
+	{
+		tmp = f.pr - ft_nbrlen((long long)a, 16); 
+		len += ft_nbrlen((long long)a, 16);
+	}
+	if (tmp > 0)
+		len += tmp;
 	return (len);
+}
+
+void	ft_print_adress(void *a, t_format f)
+{
+	write(1, "0x", 2);
+	if (f.pr < 0)
+		ft_putnbr_base((long long)a, "0123456789abcdef");
+	else if (f.pr == 0)
+	{
+		if (a != NULL)
+			ft_putnbr_base((long long)a, "0123456789abcdef");
+	}
+	else if (f.pr > 0)
+	{
+		ft_time('0', f.pr - ft_nbrlen((long long)a, 16));
+		ft_putnbr_base((long long)a, "0123456789abcdef");
+	}
 }
