@@ -17,7 +17,7 @@ static t_print		ft_width(const char *format, int a, va_list list)
 		p.status += ft_format_count(format + a, "0123456789");
 	}
 	else
-		p.status = 0;
+		p.status++;
 	return (p);
 }
 
@@ -71,14 +71,17 @@ t_format			ft_get_params(const char *format, t_format f, va_list list)
 	t_print		p;
 	char		*tmp;
 
-	if (ft_format(format[f.po], "-+0"))
+	if (ft_format(format[f.po], "-0"))
 	{
 		tmp = f.fl;
-		f.fl = ft_strjoin(tmp, &format[f.po]);
+		if (format[f.po] == '-')
+			f.fl = ft_strjoin(tmp, "-");
+		else if (format[f.po] == '0')
+			f.fl = ft_strjoin(tmp, "0");
 		free(tmp);
 		f.po++;
 	}
-	else if (ft_format(format[f.po], "0123456789*"))
+	else if (ft_format(format[f.po], "123456789*"))
 	{
 		p = ft_width(format, f.po, list);
 		f = ft_checker(f, p, 0);
