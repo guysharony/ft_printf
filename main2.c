@@ -6,6 +6,6 @@ int		main(void)
 	int		a;
 
 	a = 42;
-	ft_printf("|ok %*.*p|\n", -20, -10, &a);
+	printf("|ok %10.50--d|\n", -33);
 	return (0);
 }

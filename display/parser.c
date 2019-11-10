@@ -52,11 +52,13 @@ t_format			ft_checker(t_format f, t_print p, char b, int add)
 
 	(void)b;
 	tmp = NULL;
-	if (p.len < 0 && (f.wi < p.len * -1 || b == '*'))
+	if (p.len < 0 && (f.wi < p.len * -1 || b == '*' || add == 0))
 	{
 		tmp = f.fl;
 		f.fl = ft_strjoin(tmp, "-");
 		free(tmp);
+		if (add == 1 && p.len < 0)
+			f.pr = 0;
 		f.wi = p.len * -1;
 	}
 	else if (add == 1)
