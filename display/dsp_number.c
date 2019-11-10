@@ -6,11 +6,12 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 07:04:07 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 13:45:38 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/10 14:41:00 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+#include <stdio.h>
 
 static int		ft_space(t_format f, int nb)
 {
@@ -23,10 +24,10 @@ static int		ft_space(t_format f, int nb)
 		a -= f.pr;
 	else
 		a -= ft_nbrlen(nb, 10);
-	if (a < 0 || f.pr >= f.wi)
-		return (0);
-	if (ft_format('0', f.fl) && f.wi > f.pr && f.pr > 0 &&  f.pr < ft_nbrlen(nb, 10))
+	if (ft_format('0', f.fl) && f.pr > 0 && f.pr < ft_nbrlen(nb, 10))
 		a += f.pr - ft_nbrlen(nb, 10);
+	if (a < 0)
+		return (0);
 	return (a);
 }
 
@@ -57,6 +58,8 @@ int				dsp_number(t_format f, long long nb)
 
 	nb_space = ft_space(f, nb);
 	nb_zero = f.pr - (ft_nbrlen(nb, 10) - ft_number(f, nb));
+	if (f.pr > f.wi && f.wi > 0)
+		nb_zero = ft_nbrlen(nb, 10) - ft_number(f, nb);
 	nb_value = nb / ft_pow(10, ft_number(f, nb));
 	len = ft_print_before(f, nb_value, nb_space, nb_zero);
 	if (nb_value < 0)
@@ -67,6 +70,7 @@ int				dsp_number(t_format f, long long nb)
 		len += ft_nbrlen(nb_value, 10);
 		ft_putnbr_base(nb_value, "0123456789");
 	}
+	printf("[%d]\n", nb_space);
 	if (ft_format('-', f.fl))
 		ft_time(' ', nb_space);
 	return (len);
