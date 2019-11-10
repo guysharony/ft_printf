@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 07:04:07 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/09 14:23:56 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/10 13:45:38 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static int		ft_space(t_format f, int nb)
 		a -= ft_nbrlen(nb, 10);
 	if (a < 0 || f.pr >= f.wi)
 		return (0);
+	if (ft_format('0', f.fl) && f.wi > f.pr && f.pr > 0 &&  f.pr < ft_nbrlen(nb, 10))
+		a += f.pr - ft_nbrlen(nb, 10);
 	return (a);
 }
 
