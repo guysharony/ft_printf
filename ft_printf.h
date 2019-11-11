@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/11 07:24:04 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/11 08:19:19 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void				ft_print_unsigned(unsigned int nb, char *base, t_format f);
 int					ft_size_unsigned(unsigned int nb, char *base, t_format f);
 int					ft_size_string(char *str, t_format f);
 void				ft_print_string(char *str, t_format f);
+int					ft_size_char(char c, t_format f);
+void				ft_print_char(char c, t_format f);
 
 int					ft_pow(int nb, int power);
 int					ft_putnstr(char *str, int len);

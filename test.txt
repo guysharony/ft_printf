@@ -63,8 +63,8 @@
 
 
 [0m;[0;36m======================= TEST[0m 1
-|ok 0x7ffeea4d69b9 , 0x0 , 0x0 , 0x0|
-|ok 0x7ffeea4d69b9 , 0x0 , 0x0 , 0x0|
+|ok 0x7ffeef4319b9 , 0x0 , 0x0 , 0x0|
+|ok 0x7ffeef4319b9 , 0x0 , 0x0 , 0x0|
                                              [1;33mretour officiel   : 38[0m
                                              [1;33mretour unofficiel : 38[0m
 [1;31m
@@ -223,8 +223,8 @@
                                              [1;33mretour officiel   : 15[0m
                                              [1;33mretour unofficiel : 15[0m
 [0;36m======================= TEST[0m 2
-|0x7ffeea4d69b9|
-|0x7ffeea4d69b9|
+|0x7ffeef4319b9|
+|0x7ffeef4319b9|
                                              [1;33mretour officiel   : 17[0m
                                              [1;33mretour unofficiel : 17[0m
 [0;36m======================= TEST[0m 3
@@ -243,8 +243,8 @@
 
 
 [0m;[0;36m======================= TEST[0m 1
-|0x7ffeea4d69b9                                                                            |
-|0x7ffeea4d69b9                                                                            |
+|0x7ffeef4319b9                                                                            |
+|0x7ffeef4319b9                                                                            |
                                              [1;33mretour officiel   : 93[0m
                                              [1;33mretour unofficiel : 93[0m
 [0;36m======================= TEST[0m 2
@@ -263,8 +263,8 @@
                                              [1;33mretour officiel   : 33[0m
                                              [1;33mretour unofficiel : 33[0m
 [0;36m======================= TEST[0m 5
-|0x7ffeea4d69b9                |
-|0x7ffeea4d69b9                |
+|0x7ffeef4319b9                |
+|0x7ffeef4319b9                |
                                              [1;33mretour officiel   : 33[0m
                                              [1;33mretour unofficiel : 33[0m
 [0;36m======================= TEST[0m 6
@@ -381,28 +381,29 @@
 |ok  |
 |ok  |
                                              [1;33mretour officiel   : 7[0m
+[-1] - [-1] - [1] - [(null)]
                                              [1;33mretour unofficiel : 7[0m
 [0;36m======================= TEST[0m 10    %c = 9
 |ok 	|
 |ok 	|
                                              [1;33mretour officiel   : 7[0m
+[-1] - [0] - [1] - [(null)]
                                              [1;33mretour unofficiel : 7[0m
 [0;36m======================= TEST[0m 11    %c = '@'
 |ok @|
 |ok @|
                                              [1;33mretour officiel   : 7[0m
+[-1] - [0] - [1] - [(null)]
                                              [1;33mretour unofficiel : 7[0m
 [0;36m======================= TEST[0m 12    %s = 'string'
 |ok       |
 |ok       |
                                              [1;33mretour officiel   : 12[0m
-[0] - [6] - [0] - [(null)]
                                              [1;33mretour unofficiel : 12[0m
 [0;36m======================= TEST[0m 13    %s = (null)
 |ok |
 |ok |
                                              [1;33mretour officiel   : 6[0m
-[0] - [-1] - [0] - [(null)]
                                              [1;33mretour unofficiel : 6[0m
 [0;36m======================= TEST[0m 14    k = other
 |ok k|
@@ -440,26 +441,25 @@
                                              [1;33mretour officiel   : 26[0m
                                              [1;33mretour unofficiel : 26[0m
 [0;36m======================= TEST[0m 6
-|ok 0x7ffeea4d69b9      |
-|ok 0x7ffeea4d69b9      |
+|ok 0x7ffeef4319b9      |
+|ok 0x7ffeef4319b9      |
                                              [1;33mretour officiel   : 26[0m
                                              [1;33mretour unofficiel : 26[0m
 [0;36m======================= TEST[0m 7
 |ok @                   |
 |ok @                   |
                                              [1;33mretour officiel   : 26[0m
+[20] - [0] - [1] - [--]
                                              [1;33mretour unofficiel : 26[0m
 [0;36m======================= TEST[0m 8
 |ok           riddim dub|
 |ok           riddim dub|
                                              [1;33mretour officiel   : 26[0m
-[10] - [20] - [10] - [(null)]
                                              [1;33mretour unofficiel : 26[0m
 [0;36m======================= TEST[0m 8
 |ok riddim dubstep      |
 |ok riddim dubstep      |
                                              [1;33mretour officiel   : 26[0m
-[0] - [20] - [14] - [--]
                                              [1;33mretour unofficiel : 26[0m
 [1;31m
 =============================================================================
@@ -470,56 +470,67 @@
 |@         |
 |@         |
                                              [1;33mretour officiel   : 13[0m
+[10] - [10] - [1] - [-]
                                              [1;33mretour unofficiel : 13[0m
 [0;36m======================= TEST[0m 2
 |@    |
 |@    |
                                              [1;33mretour officiel   : 8[0m
+[5] - [10] - [1] - [--]
                                              [1;33mretour unofficiel : 8[0m
 [0;36m======================= TEST[0m 3
 |@                   |
 |@                   |
                                              [1;33mretour officiel   : 23[0m
+[20] - [5] - [1] - [-0-]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 4
 |0000000000000000000@|
 |0000000000000000000@|
                                              [1;33mretour officiel   : 23[0m
+[20] - [5] - [1] - [0]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 5
 | |
 | |
                                              [1;33mretour officiel   : 4[0m
+[-1] - [-1] - [1] - [(null)]
                                              [1;33mretour unofficiel : 4[0m
 [0;36m======================= TEST[0m 6
 ||
 ||
                                              [1;33mretour officiel   : 4[0m
+[-1] - [-1] - [1] - [(null)]
                                              [1;33mretour unofficiel : 4[0m
 [0;36m======================= TEST[0m 7
 |0 |
 |0 |
                                              [1;33mretour officiel   : 5[0m
+[2] - [5] - [1] - [0]
                                              [1;33mretour unofficiel : 5[0m
 [0;36m======================= TEST[0m 8
 |0000000000000000000 |
 |0000000000000000000 |
                                              [1;33mretour officiel   : 23[0m
+[20] - [5] - [1] - [0]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 9
 |0000|
 |0000|
                                              [1;33mretour officiel   : 8[0m
+[5] - [2] - [1] - [0]
                                              [1;33mretour unofficiel : 8[0m
 [0;36m======================= TEST[0m 10
 |0000*|
 |0000*|
                                              [1;33mretour officiel   : 8[0m
+[5] - [2] - [1] - [0]
                                              [1;33mretour unofficiel : 8[0m
 [0;36m======================= TEST[0m 11
 |0000*|
 |0000*|
                                              [1;33mretour officiel   : 8[0m
+[5] - [2] - [1] - [0]
                                              [1;33mretour unofficiel : 8[0m
 [1;31m
 =============================================================================
@@ -530,79 +541,66 @@
 |uneLongueC|
 |uneLongueC|
                                              [1;33mretour officiel   : 13[0m
-[10] - [-1] - [10] - [(null)]
                                              [1;33mretour unofficiel : 13[0m
 [0;36m======================= TEST[0m 2
 |u|
 |u|
                                              [1;33mretour officiel   : 4[0m
-[1] - [-1] - [1] - [(null)]
                                              [1;33mretour unofficiel : 4[0m
 [0;36m======================= TEST[0m 3
 ||
 ||
                                              [1;33mretour officiel   : 3[0m
-[0] - [-1] - [0] - [(null)]
                                              [1;33mretour unofficiel : 3[0m
 [0;36m======================= TEST[0m 4
 |uneLongueChaineDeChar|
 |uneLongueChaineDeChar|
                                              [1;33mretour officiel   : 24[0m
-[30] - [-1] - [21] - [(null)]
                                              [1;33mretour unofficiel : 24[0m
 [0;36m======================= TEST[0m 5
 |123|
 |123|
                                              [1;33mretour officiel   : 6[0m
-[3] - [-1] - [3] - [(null)]
                                              [1;33mretour unofficiel : 6[0m
 [0;36m======================= TEST[0m 6
 |1234|
 |1234|
                                              [1;33mretour officiel   : 7[0m
-[4] - [-1] - [4] - [(null)]
                                              [1;33mretour unofficiel : 7[0m
 [0;36m======================= TEST[0m 7
 |12345|
 |12345|
                                              [1;33mretour officiel   : 8[0m
-[5] - [-1] - [5] - [(null)]
                                              [1;33mretour unofficiel : 8[0m
 [0;36m======================= TEST[0m 8
 |12345|
 |12345|
                                              [1;33mretour officiel   : 8[0m
-[6] - [-1] - [5] - [(null)]
                                              [1;33mretour unofficiel : 8[0m
 [0;36m======================= TEST[0m 9
 |(null)|
 |(null)|
                                              [1;33mretour officiel   : 9[0m
-[-1] - [-1] - [6] - [(null)]
                                              [1;33mretour unofficiel : 9[0m
 [0;36m======================= TEST[0m 10
 ||
 ||
                                              [1;33mretour officiel   : 3[0m
-[0] - [-1] - [0] - [(null)]
                                              [1;33mretour unofficiel : 3[0m
 [0;36m======================= TEST[0m 11
 |(|
 |(|
                                              [1;33mretour officiel   : 4[0m
-[1] - [-1] - [1] - [(null)]
                                              [1;33mretour unofficiel : 4[0m
 [0;36m======================= TEST[0m 12
 |(null|
 |(null|
                                              [1;33mretour officiel   : 8[0m
-[5] - [-1] - [5] - [(null)]
                                              [1;33mretour unofficiel : 8[0m
 [0;36m======================= TEST[0m 12
 |(null)|
 |(null)|
                                              [1;33mretour officiel   : 9[0m
-[10] - [-1] - [6] - [(null)]
                                              [1;33mretour unofficiel : 9[0m
 [1;31m
 =============================================================================
@@ -613,79 +611,66 @@
 |          uneLongueC|
 |          uneLongueC|
                                              [1;33mretour officiel   : 23[0m
-[10] - [20] - [10] - [(null)]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 2
 |                   u|
 |                   u|
                                              [1;33mretour officiel   : 23[0m
-[1] - [20] - [1] - [(null)]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 3
 |                    |
 |                    |
                                              [1;33mretour officiel   : 23[0m
-[0] - [20] - [0] - [(null)]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 4
 |uneLongueChaineDeChar|
 |uneLongueChaineDeChar|
                                              [1;33mretour officiel   : 24[0m
-[30] - [20] - [21] - [(null)]
                                              [1;33mretour unofficiel : 24[0m
 [0;36m======================= TEST[0m 5
 |                 123|
 |                 123|
                                              [1;33mretour officiel   : 23[0m
-[3] - [20] - [3] - [(null)]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 6
 |                1234|
 |                1234|
                                              [1;33mretour officiel   : 23[0m
-[4] - [20] - [4] - [(null)]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 7
 |               12345|
 |               12345|
                                              [1;33mretour officiel   : 23[0m
-[5] - [20] - [5] - [(null)]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 8
 |               12345|
 |               12345|
                                              [1;33mretour officiel   : 23[0m
-[6] - [20] - [5] - [(null)]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 9
 |(null)|
 |(null)|
                                              [1;33mretour officiel   : 9[0m
-[-1] - [-1] - [6] - [(null)]
                                              [1;33mretour unofficiel : 9[0m
 [0;36m======================= TEST[0m 10
 |                    |
 |                    |
                                              [1;33mretour officiel   : 23[0m
-[0] - [20] - [0] - [(null)]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 11
 |                   (|
 |                   (|
                                              [1;33mretour officiel   : 23[0m
-[1] - [20] - [1] - [(null)]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 12
 |               (null|
 |               (null|
                                              [1;33mretour officiel   : 23[0m
-[5] - [20] - [5] - [(null)]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 12
 |         (null)|
 |         (null)|
                                              [1;33mretour officiel   : 18[0m
-[10] - [15] - [6] - [(null)]
                                              [1;33mretour unofficiel : 18[0m
 [1;31m
 =============================================================================
@@ -701,7 +686,6 @@
 |sblpoup-00000000001289945306%                   u -123      |
 |sblpoup-00000000001289945306%                   u -123      |
                                              [1;33mretour officiel   : 63[0m
-[1] - [20] - [1] - [(null)]
                                              [1;33mretour unofficiel : 63[0m
 [0;36m======================= TEST[0m 2
 |0x0000000ffffcfc7   %|
@@ -739,26 +723,32 @@
 |fin                     [1;33mretour unofficiel : 27[0m
 [0;36m======================= TEST[0m 2 - 6 - 1
 @moulitest:       @|fin@moulitest:       @                              [1;33mretour officiel   : 19[0m
+[-1] - [7] - [1] - [(null)]
+[5] - [12] - [1] - [(null)]
 |fin                              [1;33mretour unofficiel : 19[0m
 [0;36m======================= TEST[0m 2 - 6 - 2
 @moulitest:        |fin@moulitest:                                       [1;33mretour officiel   : 19[0m
+[-1] - [7] - [1] - [(null)]
+[5] - [0] - [1] - [(null)]
 |fin                               [1;33mretour unofficiel : 19[0m
 [0;36m======================= TEST[0m 2 - 7
 @moulitest: (null)      |fin@moulitest: (null)                              [1;33mretour officiel   : 24[0m
-[7] - [-1] - [6] - [(null)]
-[0] - [5] - [0] - [(null)]
 |fin                        [1;33mretour unofficiel : 24[0m
 [0;36m======================= TEST[0m 3
  |fin                                                 [1;33mretour officiel   : 1[0m
+[-1] - [2] - [1] - [(null)]
 |fin                                                [1;33mretour unofficiel : 1[0m
 [0;36m======================= TEST[0m 4
 @moulitest:  |fin@moulitest:                                      [1;33mretour officiel   : 13[0m
+[-1] - [-1] - [1] - [(null)]
 |fin                                    [1;33mretour unofficiel : 13[0m
 [0;36m======================= TEST[0m 5
   |fin                                                 [1;33mretour officiel   : 2[0m
+[2] - [-1] - [1] - [(null)]
 |fin                                               [1;33mretour unofficiel : 2[0m
 [0;36m======================= TEST[0m 6
 null   and text|finnull   and text                                  [1;33mretour officiel   : 15[0m
+[-1] - [-1] - [1] - [(null)]
 |fin                                  [1;33mretour unofficiel : 15[0m
 [0;36m======================= TEST[0m 7
 @moulitest:            |fin@moulitest:                                     [1;33mretour officiel   : 23[0m
@@ -770,12 +760,15 @@ null   and text|finnull   and text                                  [1;33mretou
 
 [0m;[0;36m======================= TEST[0m 1 - 1
  |fin                                              [1;33mretour officiel   : 1[0m
+[-1] - [2] - [1] - [(null)]
 |fin                                             [1;33mretour unofficiel : 1[0m
 [0;36m======================= TEST[0m 1 - 2
 @moulitest:  |fin@moulitest:                                   [1;33mretour officiel   : 13[0m
+[-1] - [-1] - [1] - [(null)]
 |fin                                 [1;33mretour unofficiel : 13[0m
 [0;36m======================= TEST[0m 1 - 3
   |fin                                              [1;33mretour officiel   : 2[0m
+[2] - [-1] - [1] - [(null)]
 |fin                                            [1;33mretour unofficiel : 2[0m
 [0;36m======================= TEST[0m 2 - 1
 -0042|fin-0042                                            [1;33mretour officiel   : 5[0m
@@ -794,6 +787,7 @@ FFFFFFD6|finFFFFFFD6                                         [1;33mretour offic
 |fin                                         [1;33mretour unofficiel : 8[0m
 [0;36m======================= TEST[0m 2 - 6
 0000Ö|fin0000Ö                                            [1;33mretour officiel   : 5[0m
+[5] - [-1] - [1] - [0]
 |fin                                            [1;33mretour unofficiel : 5[0m
 [1;31m
 =============================================================================
@@ -820,6 +814,7 @@ FFFFFFD6|finFFFFFFD6                                          [1;33mretour offi
 |fin                                        [1;33mretour unofficiel : 10[0m
 [0;36m======================= TEST[0m 1 - 7
 0000Ö|fin0000Ö                                             [1;33mretour officiel   : 5[0m
+[5] - [-1] - [1] - [0]
 |fin                                             [1;33mretour unofficiel : 5[0m
 [1;31m
 =============================================================================
@@ -828,13 +823,15 @@ FFFFFFD6|finFFFFFFD6                                          [1;33mretour offi
 
 [0m;[0;36m======================= TEST[0m 1
 {   }|fin{   }                                             [1;33mretour officiel   : 5[0m
+[3] - [-1] - [1] - [(null)]
 |fin                                             [1;33mretour unofficiel : 5[0m
 [0;36m======================= TEST[0m 2
-bonjour420x7ffeea4d6997%42422a2Ac|finbonjour420x7ffeea4d6997%42422a2Ac                                             [1;33mretour officiel   : 33[0m
-[-1] - [-1] - [7] - [(null)]
+bonjour420x7ffeef431997%42422a2Ac|finbonjour420x7ffeef431997%42422a2Ac                                             [1;33mretour officiel   : 33[0m
+[-1] - [-1] - [1] - [(null)]
 |fin                                             [1;33mretour unofficiel : 33[0m
 [0;36m======================= TEST[0m 3
 { }|fin{ }                                             [1;33mretour officiel   : 3[0m
+[0] - [-1] - [1] - [(null)]
 |fin                                             [1;33mretour unofficiel : 3[0m
 [0;36m======================= TEST[0m 4 - 1
 {00042}|fin{42   }                                             [1;33mretour officiel   : 7[0m
@@ -849,15 +846,19 @@ bonjour420x7ffeea4d6997%42422a2Ac|finbonjour420x7ffeea4d6997%42422a2Ac          
 
 [0m;[0;36m======================= TEST[0m 1
  |fin                                              [1;33mretour officiel   : 1[0m
+[-1] - [2] - [1] - [(null)]
 |fin                                             [1;33mretour unofficiel : 1[0m
 [0;36m======================= TEST[0m 2
-     |fin                                               [1;33mretour officiel   : 5[0m
-|fin                                             [1;33mretour unofficiel : 2[0m
+     |fin                                                  [1;33mretour officiel   : 5[0m
+[5] - [2] - [1] - [(null)]
+|fin                                             [1;33mretour unofficiel : 5[0m
 [0;36m======================= TEST[0m 3
 0000 |fin0000                                              [1;33mretour officiel   : 5[0m
+[5] - [2] - [1] - [0]
 |fin                                             [1;33mretour unofficiel : 5[0m
 [0;36m======================= TEST[0m 4
  |fin                                              [1;33mretour officiel   : 1[0m
+[-1] - [2] - [1] - [(null)]
 |fin                                             [1;33mretour unofficiel : 1[0m
 [1;31m
 =============================================================================
@@ -866,16 +867,20 @@ bonjour420x7ffeea4d6997%42422a2Ac|finbonjour420x7ffeea4d6997%42422a2Ac          
 
 [0m;[0;36m======================= TEST[0m 1
  |fin                                             [1;33mretour officiel   : 1[0m
- |fin                                             [1;33mretour unofficiel : 1[0m
+ [-1] - [2] - [1] - [(null)]
+|fin                                             [1;33mretour unofficiel : 1[0m
 [0;36m======================= TEST[0m 2
 @moulitest:  |fin                                             [1;33mretour officiel   : 13[0m
-@moulitest:  |fin                                             [1;33mretour unofficiel : 13[0m
+@moulitest:  [-1] - [-1] - [1] - [(null)]
+|fin                                             [1;33mretour unofficiel : 13[0m
 [0;36m======================= TEST[0m 3
     |fin                                             [1;33mretour officiel   : 4[0m
-    |fin                                             [1;33mretour unofficiel : 4[0m
+    [4] - [8] - [1] - [-]
+|fin                                             [1;33mretour unofficiel : 4[0m
 [0;36m======================= TEST[0m 4
 null   and text|fin                                             [1;33mretour officiel   : 15[0m
-null   and text|fin                                             [1;33mretour unofficiel : 15[0m
+null   and text[-1] - [-1] - [1] - [(null)]
+|fin                                             [1;33mretour unofficiel : 15[0m
 [0;36m======================= TEST[0m 5
 [1;31m
 =============================================================================
@@ -884,11 +889,9 @@ null   and text|fin                                             [1;33mretour un
 
 [0m;[0;36m======================= TEST[0m 1
 |bad||bad|                                             [1;33mretour officiel   : 5[0m
-[3] - [-1] - [3] - [(null)]
                                              [1;33mretour unofficiel : 5[0m
 [0;36m======================= TEST[0m 2
 |     bad||     bad|                                             [1;33mretour officiel   : 10[0m
-[3] - [8] - [3] - [(null)]
                                              [1;33mretour unofficiel : 10[0m
 [1;31m
 =============================================================================
@@ -897,14 +900,16 @@ null   and text|fin                                             [1;33mretour un
 
 [0m;[0;36m======================= TEST[0m 1
 |?      |
-|?    |
+|?      |
                                              [1;33mretour officiel   : 10[0m
-                                             [1;33mretour unofficiel : 8[0m
+[7] - [5] - [1] - [-]
+                                             [1;33mretour unofficiel : 10[0m
 [0;36m======================= TEST[0m 2
 |       |
-|     |
+|       |
                                              [1;33mretour officiel   : 10[0m
-                                             [1;33mretour unofficiel : 8[0m
+[7] - [5] - [1] - [-]
+                                             [1;33mretour unofficiel : 10[0m
 [0;36m======================= TEST[0m 3
 |-00123 |
 |-00123 |
@@ -927,7 +932,6 @@ null   and text|fin                                             [1;33mretour un
                                              [1;33mretour unofficiel : 2[0m
 [0;36m======================= TEST[0m 2
 Hello 42 school! (null)Hello 42 school! (null)                                             [1;33mretour officiel   : 23[0m
-[-1] - [-1] - [6] - [(null)]
                                              [1;33mretour unofficiel : 23[0m
 [0;36m======================= TEST[0m 3
 000000000%000000000%                                             [1;33mretour officiel   : 10[0m
@@ -1120,6 +1124,7 @@ ffffffff
                                              [1;33mretour unofficiel : 12[0m
 [0;36m======================= TEST[0m 42
 {   }|fin{   }                                             [1;33mretour officiel   : 5[0m
+[3] - [-1] - [1] - [(null)]
 |fin                                             [1;33mretour unofficiel : 5[0m
 [0;36m======================= TEST[0m 43
 %p::[8473]
@@ -1151,57 +1156,55 @@ ffffffff
 a
 a
                                              [1;33mretour officiel   : 2[0m
+[-1] - [-1] - [1] - [(null)]
                                              [1;33mretour unofficiel : 2[0m
 [0;36m======================= TEST[0m 49
          t
          t
                                              [1;33mretour officiel   : 11[0m
+[10] - [-1] - [1] - [(null)]
                                              [1;33mretour unofficiel : 11[0m
 [0;36m======================= TEST[0m 50 - 1
 y
 y
                                              [1;33mretour officiel   : 2[0m
+[1] - [-1] - [1] - [(null)]
                                              [1;33mretour unofficiel : 2[0m
 [0;36m======================= TEST[0m 51 - 2
 000000000t
 000000000t
                                              [1;33mretour officiel   : 11[0m
+[10] - [-1] - [1] - [0]
                                              [1;33mretour unofficiel : 11[0m
 [0;36m======================= TEST[0m 52
                                                 Co
                                              [1;33mretour officiel   : 51[0m
                                                 Co
-[2] - [50] - [2] - [(null)]
                                              [1;33mretour unofficiel : 51[0m
 [0;36m======================= TEST[0m 53
                                                 (n
                                              [1;33mretour officiel   : 51[0m
                                                 (n
-[2] - [50] - [2] - [(null)]
                                              [1;33mretour unofficiel : 51[0m
 [0;36m======================= TEST[0m 54
      
                                              [1;33mretour officiel   : 6[0m
      
-[0] - [5] - [0] - [(null)]
                                              [1;33mretour unofficiel : 6[0m
 [0;36m======================= TEST[0m 55
 T
                                              [1;33mretour officiel   : 2[0m
 T
-[1] - [-1] - [1] - [(null)]
                                              [1;33mretour unofficiel : 2[0m
 [0;36m======================= TEST[0m 56
     (null)
                                              [1;33mretour officiel   : 11[0m
     (null)
-[-1] - [10] - [6] - [(null)]
                                              [1;33mretour unofficiel : 11[0m
 [0;36m======================= TEST[0m 57
         Ok
                                              [1;33mretour officiel   : 11[0m
         Ok
-[-1] - [10] - [2] - [(null)]
                                              [1;33mretour unofficiel : 11[0m
 [0;36m======================= TEST[0m 58
 Les bornes :  -2147483648, 2147483647
@@ -1246,13 +1249,13 @@ Les bornes :  0, ffffffff
                                              [1;33mretour officiel   : 4[0m
                                              [1;33mretour unofficiel : 4[0m
 [0;36m======================= TEST[0m 65 - 2
-0x7ffeea4d6990
-0x7ffeea4d6990
+0x7ffeef431990
+0x7ffeef431990
                                              [1;33mretour officiel   : 15[0m
                                              [1;33mretour unofficiel : 15[0m
 [0;36m======================= TEST[0m 66
-0x7ffeea4d6990
-0x7ffeea4d6990
+0x7ffeef431990
+0x7ffeef431990
                                              [1;33mretour officiel   : 15[0m
                                              [1;33mretour unofficiel : 15[0m
 [0;36m======================= TEST[0m 67
@@ -1355,6 +1358,8 @@ t14       1000
 4caractere 1            a caractere 2            c
 
                                              [1;33mretour officiel   : 52[0m
+[12] - [-1] - [1] - [(null)]
+[12] - [-1] - [1] - [(null)]
                                              [1;33mretour unofficiel : 52[0m
 [0;36m======================= TEST[0m 85
 1caractere 1 a caractere 2 c
@@ -1362,6 +1367,8 @@ t14       1000
 1caractere 1 a caractere 2 c
 
                                              [1;33mretour officiel   : 30[0m
+[-1] - [-1] - [1] - [(null)]
+[-1] - [-1] - [1] - [(null)]
                                              [1;33mretour unofficiel : 30[0m
 [0;36m======================= TEST[0m 86
 3caractere 1 a caractere 2 c
@@ -1369,6 +1376,8 @@ t14       1000
 3caractere 1 a caractere 2 c
 
                                              [1;33mretour officiel   : 30[0m
+[-1] - [-1] - [1] - [(null)]
+[-1] - [-1] - [1] - [(null)]
                                              [1;33mretour unofficiel : 30[0m
 [0;36m======================= TEST[0m 87
 1hexa-maj 1 2A hexa-maj 2 FFFFFFD6
@@ -1420,44 +1429,44 @@ t14       1000
                                              [1;33mretour officiel   : 72[0m
                                              [1;33mretour unofficiel : 72[0m
 [0;36m======================= TEST[0m 94
-1pointeur 10x7ffeea4d6997 pointeur 20x7ffeea4d6997
+1pointeur 10x7ffeef431997 pointeur 20x7ffeef431997
 
-1pointeur 10x7ffeea4d6997 pointeur 20x7ffeea4d6997
+1pointeur 10x7ffeef431997 pointeur 20x7ffeef431997
 
                                              [1;33mretour officiel   : 52[0m
                                              [1;33mretour unofficiel : 52[0m
 [0;36m======================= TEST[0m 95
-3pointeur 1 0x7ffeea4d6997 pointeur 20x7ffeea4d6997
+3pointeur 1 0x7ffeef431997 pointeur 20x7ffeef431997
 
-3pointeur 1 0x7ffeea4d6997 pointeur 20x7ffeea4d6997
+3pointeur 1 0x7ffeef431997 pointeur 20x7ffeef431997
 
                                              [1;33mretour officiel   : 53[0m
                                              [1;33mretour unofficiel : 53[0m
 [0;36m======================= TEST[0m 96
-4pointeur 1 0x7ffeea4d6997 pointeur 2 0x7ffeea4d6997
+4pointeur 1 0x7ffeef431997 pointeur 2 0x7ffeef431997
 
-4pointeur 1 0x7ffeea4d6997 pointeur 2 0x7ffeea4d6997
+4pointeur 1 0x7ffeef431997 pointeur 2 0x7ffeef431997
 
                                              [1;33mretour officiel   : 54[0m
                                              [1;33mretour unofficiel : 54[0m
 [0;36m======================= TEST[0m 97
-4pointeur 1 0x7ffeea4d6997 pointeur 2 0x7ffeea4d6997
+4pointeur 1 0x7ffeef431997 pointeur 2 0x7ffeef431997
 
-4pointeur 1 0x7ffeea4d6997 pointeur 2 0x7ffeea4d6997
+4pointeur 1 0x7ffeef431997 pointeur 2 0x7ffeef431997
 
                                              [1;33mretour officiel   : 54[0m
                                              [1;33mretour unofficiel : 54[0m
 [0;36m======================= TEST[0m 98
-5pointeur 1 0x7ffeea4d6997 pointeur 2 0x7ffeea4d6997
+5pointeur 1 0x7ffeef431997 pointeur 2 0x7ffeef431997
 
-5pointeur 1 0x7ffeea4d6997 pointeur 2 0x7ffeea4d6997
+5pointeur 1 0x7ffeef431997 pointeur 2 0x7ffeef431997
 
                                              [1;33mretour officiel   : 54[0m
                                              [1;33mretour unofficiel : 54[0m
 [0;36m======================= TEST[0m 99
-6pointeur 1 0x7ffeea4d6997 pointeur 2 0x7ffeea4d6997
+6pointeur 1 0x7ffeef431997 pointeur 2 0x7ffeef431997
 
-6pointeur 1 0x7ffeea4d6997 pointeur 2 0x7ffeea4d6997
+6pointeur 1 0x7ffeef431997 pointeur 2 0x7ffeef431997
 
                                              [1;33mretour officiel   : 54[0m
                                              [1;33mretour unofficiel : 54[0m
@@ -1521,7 +1530,6 @@ t14       1000
 (null)
 (null)
                                              [1;33mretour officiel   : 7[0m
-[-1] - [-1] - [6] - [(null)]
                                              [1;33mretour unofficiel : 7[0m
 [0;36m======================= TEST[0m 109
 %
@@ -1604,8 +1612,6 @@ percent 8             %
 1string 1toto string 2bonjour
 
                                              [1;33mretour officiel   : 31[0m
-[-1] - [-1] - [4] - [(null)]
-[-1] - [-1] - [7] - [(null)]
                                              [1;33mretour unofficiel : 31[0m
 [0;36m======================= TEST[0m 124
 3string 1 toto string 2bonjour
@@ -1613,8 +1619,6 @@ percent 8             %
 3string 1 toto string 2bonjour
 
                                              [1;33mretour officiel   : 32[0m
-[-1] - [-1] - [4] - [(null)]
-[-1] - [-1] - [7] - [(null)]
                                              [1;33mretour unofficiel : 32[0m
 [0;36m======================= TEST[0m 125
 4string 1         toto string 2      bonjour
@@ -1622,8 +1626,6 @@ percent 8             %
 4string 1         toto string 2      bonjour
 
                                              [1;33mretour officiel   : 46[0m
-[-1] - [12] - [4] - [(null)]
-[-1] - [12] - [7] - [(null)]
                                              [1;33mretour unofficiel : 46[0m
 [0;36m======================= TEST[0m 126
 percent 7            %
@@ -1636,8 +1638,6 @@ percent 7            %
 4string 1 toto         string 2 bonjour     
 
                                              [1;33mretour officiel   : 46[0m
-[-1] - [12] - [4] - [-]
-[-1] - [12] - [7] - [-]
                                              [1;33mretour unofficiel : 46[0m
 [0;36m======================= TEST[0m 128
 5string 1 toto string 2 bonjour
@@ -1645,8 +1645,6 @@ percent 7            %
 5string 1 toto string 2 bonjour
 
                                              [1;33mretour officiel   : 33[0m
-[-1] - [-1] - [4] - [0]
-[-1] - [-1] - [7] - [0]
                                              [1;33mretour unofficiel : 33[0m
 [0;36m======================= TEST[0m 129
 6string 1 00000000toto string 2 00000bonjour
@@ -1654,8 +1652,6 @@ percent 7            %
 6string 1 00000000toto string 2 00000bonjour
 
                                              [1;33mretour officiel   : 46[0m
-[-1] - [12] - [4] - [0]
-[-1] - [12] - [7] - [0]
                                              [1;33mretour unofficiel : 46[0m
 [0;36m======================= TEST[0m 130
 7string 1 toto         string 2 00000bonjour
@@ -1663,8 +1659,6 @@ percent 7            %
 7string 1 toto         string 2 00000bonjour
 
                                              [1;33mretour officiel   : 46[0m
-[-1] - [12] - [4] - [-0]
-[-1] - [12] - [7] - [0]
                                              [1;33mretour unofficiel : 46[0m
 [0;36m======================= TEST[0m 131
                                                                                                    1
@@ -1675,7 +1669,6 @@ percent 7            %
         10 coucou,   40
         10 coucou,   40
                                              [1;33mretour officiel   : 24[0m
-[-1] - [5] - [6] - [(null)]
                                              [1;33mretour unofficiel : 24[0m
 [1;31m
 =============================================================================
@@ -1746,85 +1739,71 @@ st17
 st7 hey
 st7 hey
                                              [1;33mretour officiel   : 8[0m
-[50] - [1] - [3] - [(null)]
                                              [1;33mretour unofficiel : 8[0m
 [0;36m======================= TEST[0m 145
 st8 
 st8 
                                              [1;33mretour officiel   : 5[0m
-[0] - [0] - [0] - [(null)]
                                              [1;33mretour unofficiel : 5[0m
 [0;36m======================= TEST[0m 146
 st9 hey
 st9 hey
                                              [1;33mretour officiel   : 8[0m
-[50] - [0] - [3] - [(null)]
                                              [1;33mretour unofficiel : 8[0m
 [0;36m======================= TEST[0m 147
 st10           
 st10           
                                              [1;33mretour officiel   : 16[0m
-[0] - [10] - [0] - [(null)]
                                              [1;33mretour unofficiel : 16[0m
 [0;36m======================= TEST[0m 148
 st10           
 st10           
                                              [1;33mretour officiel   : 16[0m
-[0] - [10] - [0] - [(null)]
                                              [1;33mretour unofficiel : 16[0m
 [0;36m======================= TEST[0m 149
 st11      hello
 st11      hello
                                              [1;33mretour officiel   : 16[0m
-[10] - [10] - [5] - [(null)]
                                              [1;33mretour unofficiel : 16[0m
 [0;36m======================= TEST[0m 150
 st7 hey
 st7 hey
                                              [1;33mretour officiel   : 8[0m
-[50] - [-1] - [3] - [0]
                                              [1;33mretour unofficiel : 8[0m
 [0;36m======================= TEST[0m 151
 st8 
 st8 
                                              [1;33mretour officiel   : 5[0m
-[0] - [-1] - [0] - [(null)]
                                              [1;33mretour unofficiel : 5[0m
 [0;36m======================= TEST[0m 152
 st9 hey
 st9 hey
                                              [1;33mretour officiel   : 8[0m
-[-1] - [0] - [3] - [(null)]
                                              [1;33mretour unofficiel : 8[0m
 [0;36m======================= TEST[0m 153
 st10        dsa
 st10        dsa
                                              [1;33mretour officiel   : 16[0m
-[-1] - [10] - [3] - [(null)]
                                              [1;33mretour unofficiel : 16[0m
 [0;36m======================= TEST[0m 154
 st118                                                                                                hello
 st118                                                                                                hello
                                              [1;33mretour officiel   : 107[0m
-[-1] - [100] - [5] - [(null)]
                                              [1;33mretour unofficiel : 107[0m
 [0;36m======================= TEST[0m 155
 st119                                                                                                                                                                                                    hello
 st119                                                                                                                                                                                                    hello
                                              [1;33mretour officiel   : 207[0m
-[-1] - [200] - [5] - [(null)]
                                              [1;33mretour unofficiel : 207[0m
 [0;36m======================= TEST[0m 156
 st120                                              hello
 st120                                              hello
                                              [1;33mretour officiel   : 57[0m
-[-1] - [50] - [5] - [(null)]
                                              [1;33mretour unofficiel : 57[0m
 [0;36m======================= TEST[0m 157
 st121                                              hello
 st121                                              hello
                                              [1;33mretour officiel   : 57[0m
-[-1] - [50] - [5] - [(null)]
                                              [1;33mretour unofficiel : 57[0m
 [0;36m======================= TEST[0m 158
 st118                                                  0
@@ -1855,13 +1834,11 @@ ultimate1                                                                       
 ultimate2 500 hey       d5ac 12C                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      -55 4294967236
 ultimate2 500 hey       d5ac 12C                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      -55 4294967236
                                              [1;33mretour officiel   : 1045[0m
-[-1] - [1] - [3] - [(null)]
                                              [1;33mretour unofficiel : 1045[0m
 [0;36m======================= TEST[0m 164
 ultimate3 00000000000000000000000000000000000000000000000500  
 ultimate3 00000000000000000000000000000000000000000000000500  
                                              [1;33mretour officiel   : 63[0m
-[0] - [1] - [0] - [(null)]
                                              [1;33mretour unofficiel : 63[0m
 [0;36m======================= TEST[0m 165
 ultimate4 000000000000000000000000000000000000000000000001f4 A
@@ -1877,21 +1854,19 @@ ultimate5 00000000000000000000000000000000000000000000000500
 taaa                                                                                                hello
 taaa                                                                                                hello
                                              [1;33mretour officiel   : 106[0m
-[-1] - [100] - [5] - [(null)]
                                              [1;33mretour unofficiel : 106[0m
 [0;36m======================= TEST[0m 167
 coucou                                                                                                                                                |fin
 coucou                                                                                                                                                |fin
 ft_printf = "     00042"
-{42   }ft_printf = "    0x10573de9c"
+{42   }ft_printf = "    0x1007e2e9c"
                                              [1;33mretour officiel   : 155[0m
-[-1] - [150] - [6] - [-]
                                              [1;33mretour unofficiel : 155[0m
    printf = "     00042"
 
 {00042}|fin
 |fin
 valeur de retour = 30
-   printf = "    0x10573de9c"
+   printf = "    0x1007e2e9c"
 valeur de retour = 30
 

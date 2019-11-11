@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:36:30 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/11 08:11:29 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/11 08:23:45 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,26 @@
 
 int				dsp_char(t_format f, int c)
 {
-	int		a;
+	int		len;
 
-	a = f.wi - 1;
-	if (f.pr > 0 && f.wi > 0 && f.pr < f.wi && !ft_format('0', f.fl))
-		a = f.pr - 1;
-	if (!ft_format('-', f.fl))
+	len = 0;
+	len += ft_size_char(c, f);
+	if (f.wi > len)
 	{
-		if (ft_format('0', f.fl))
-			ft_time('0', a);
-		else
-			ft_time(' ', a);
+		if (!ft_format('-', f.fl) && !ft_format('0', f.fl))
+			ft_time(' ', f.wi - len);
+		else if (!ft_format('-', f.fl) && ft_format('0', f.fl))
+			ft_time('0', f.wi - len);
 	}
-	write(1, &c, 1);
-	if (ft_format('-', f.fl))
-		ft_time(' ', a);
-	if (a > 0)
-		return (a + 1);
-	return (1);
+	printf("[%d] - [%d] - [%d] - [%s]\n", f.wi, f.pr, len, f.fl);
+	ft_print_char(c, f);
+	if (f.wi > len)
+	{
+		if (ft_format('-', f.fl))
+			ft_time(' ', f.wi - len);
+		len += (f.wi - len);
+	}
+	return (len);
 }
 
 int				dsp_str(t_format f, char *str)
