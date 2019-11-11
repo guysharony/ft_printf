@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 08:36:05 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/11 09:40:02 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/11 10:23:55 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,102 +160,87 @@ int		main(void)
 	printf("\033[0m;");
 
 	printf("\033[0;36m======================= TEST\033[0m 1\n");
-	i = printf("|%-10.10%|\n");
+	a = printf("|%-10.10%|\n");
 	fflush(stdout);
-	printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-	i = ft_printf("|%-10.10%|\n");
-	printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	b = ft_printf("|%-10.10%|\n");
+	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 2\n");
-	i = printf("|%-5..-.10%|\n");
+	a = printf("|%-5..-.10%|\n");
 	fflush(stdout);
-	printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-	i = ft_printf("|%-5..-.10%|\n");
-	printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	b = ft_printf("|%-5..-.10%|\n");
+	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 3\n");
-	i = printf("|%-020..-.5%|\n");
+	a = printf("|%-020..-.5%|\n");
 	fflush(stdout);
-	printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-	i = ft_printf("|%-020..-.5%|\n");
-	printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	b = ft_printf("|%-020..-.5%|\n");
+	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 4\n");
-	i = printf("|%020...50%|\n");
+	a = printf("|%020...50%|\n");
 	fflush(stdout);
-	printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-	i = ft_printf("|%020...50%|\n");
-	printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	b = ft_printf("|%020...50%|\n");
+	ft_check(a, b);
 
 	printf("\033[1;31m");
-	printf("\n=============================================================================\n");
-	printf("******************** PART 6 :\n\n\n");
+	printf("\n\n\n___ Part 6 ___\n");
 	printf("\033[0m;");
 
 	printf("\033[0;36m======================= TEST\033[0m 1\n");
-	i = printf("|%-10.10k|\n");
+	a = printf("|%-10.10k|\n");
 	fflush(stdout);
-	printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-	i = ft_printf("|%-10.10k|\n");
-	printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	b = ft_printf("|%-10.10k|\n");
+	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 2\n");
-	i = printf("|%-5..-.10k|\n");
+	a = printf("|%-5..-.10k|\n");
 	fflush(stdout);
-	printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-	i = ft_printf("|%-5..-.10k|\n");
-	printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	b = ft_printf("|%-5..-.10k|\n");
+	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 3\n");
-	i = printf("|%-020..-.5k|\n");
+	a = printf("|%-020..-.5k|\n");
 	fflush(stdout);
-	printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-	i = ft_printf("|%-020..-.5k|\n");
-	printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	b = ft_printf("|%-020..-.5k|\n");
+	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 4\n");
-	i = printf("|%020...50k|\n");
+	a = printf("|%020...50k|\n");
 	fflush(stdout);
-	printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-	i = ft_printf("|%020...50k|\n");
-	printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	b = ft_printf("|%020...50k|\n");
+	ft_check(a, b);
 
 	printf("\033[1;31m");
-	printf("\n=============================================================================\n");
-	printf("******************** PART 7 :\n\n\n");
+	printf("\n\n\n___ Part 7 ___\n");
 	printf("\033[0m;");
 
 	printf("\033[0;36m======================= TEST\033[0m 1\n");
-	i = printf("|%10.10d|\n", -123);
+	a = printf("|%10.10d|\n", -123);
 	fflush(stdout);
-	printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-	i = ft_printf("|%-10.10d|\n", -123);
-	printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	b = ft_printf("|%-10.10d|\n", -123);
+	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 2\n");
-	i = printf("|%-5..-.10d|\n", -123);
+	a = printf("|%-5..-.10d|\n", -123);
 	fflush(stdout);
-	printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-	i = ft_printf("|%-5..-.10d|\n", -123);
-	printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	b = ft_printf("|%-5..-.10d|\n", -123);
+	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 3\n");
-	i = printf("|%-020..-.5d|\n", -123);
+	a = printf("|%-020..-.5d|\n", -123);
 	fflush(stdout);
-	printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-	i = ft_printf("|%-020..-.5d|\n", -123);
-	printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	b = ft_printf("|%-020..-.5d|\n", -123);
+	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 4\n");
-	i = printf("|%020...5d|\n", -123);
+	a = printf("|%020...5d|\n", -123);
 	fflush(stdout);
-	printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-	i = ft_printf("|%020...5d|\n", -123);
-	printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	b = ft_printf("|%020...5d|\n", -123);
+	ft_check(a, b);
 
 	printf("\033[1;31m");
-	printf("\n=============================================================================\n");
-	printf("******************** PART 8 :\n\n\n");
+	printf("\n\n\n___ Part 8 ___\n");
 	printf("\033[0m;");
 
 	printf("\033[0;36m======================= TEST\033[0m 1\n");
@@ -949,261 +934,237 @@ int		main(void)
 	printf("\033[0m;");
 
 	printf("\033[0;36m======================= TEST\033[0m 1 - 1\n");
-	a = printf("%@@@%", "test"); printf("|fin");
+	a = printf("%@@@%", "test"); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("%@@@%", "test"); printf("|fin");
+	b = ft_printf("%@@@%", "test"); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 1 - 2\n");
-	a = printf("%@@@%10", "test"); printf("|fin");
+	a = printf("%@@@%10", "test"); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("%@@@%10", "test"); printf("|fin");
+	b = ft_printf("%@@@%10", "test"); printf("|fin\n");
 	ft_check(a, b);
 	printf("\033[0;36m======================= TEST\033[0m 1 - 3\n");
-	a = printf("%@@@%.10", "test"); printf("|fin");
+	a = printf("%@@@%.10", "test"); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("%@@@%.10", "test"); printf("|fin");
+	b = ft_printf("%@@@%.10", "test"); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 2 - 1\n");
-	a = printf("@moulitest: %5.x %5.0x", 0, 0); printf("|fin");
+	a = printf("@moulitest: %5.x %5.0x", 0, 0); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("@moulitest: %5.x %5.0x", 0, 0); printf("|fin");
+	b = ft_printf("@moulitest: %5.x %5.0x", 0, 0); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 2 - 2\n");
-	a = printf("@moulitest: %5.7x %05.13x", 0, 0); printf("|fin");
+	a = printf("@moulitest: %5.7x %05.13x", 0, 0); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("@moulitest: %5.7x %05.13x", 0, 0); printf("|fin");
+	b = ft_printf("@moulitest: %5.7x %05.13x", 0, 0); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 2 - 3\n");
-	a = printf("@moulitest: %.7p %5.0p", 0, 0); printf("|fin");
+	a = printf("@moulitest: %.7p %5.0p", 0, 0); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("@moulitest: %.7p %5.0p", 0, 0); printf("|fin");
+	b = ft_printf("@moulitest: %.7p %5.0p", 0, 0); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 2 - 4\n");
-	a = printf("@moulitest: %.7p %5.0X", 0, 0); printf("|fin");
+	a = printf("@moulitest: %.7p %5.0X", 0, 0); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("@moulitest: %.7p %5.0X", 0, 0); printf("|fin");
+	b = ft_printf("@moulitest: %.7p %5.0X", 0, 0); printf("|finn\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 2 - 5\n");
-	a = printf("@moulitest: %.7p %5.0u", 0, 0); printf("|fin");
+	a = printf("@moulitest: %.7p %5.0u", 0, 0); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("@moulitest: %.7p %5.0u", 0, 0); printf("|fin");
+	b = ft_printf("@moulitest: %.7p %5.0u", 0, 0); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 2 - 6 - 1\n");
-	a = printf("@moulitest: %.7c %5.012c", 0, '@'); printf("|fin");
+	a = printf("@moulitest: %.7c %5.012c", 0, '@'); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("@moulitest: %.7c %5.012c", 0, '@'); printf("|fin");
+	b = ft_printf("@moulitest: %.7c %5.012c", 0, '@'); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 2 - 6 - 2\n");
-	a = printf("@moulitest: %.7c %5.0c", 0, 0); printf("|fin");
+	a = printf("@moulitest: %.7c %5.0c", 0, 0); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("@moulitest: %.7c %5.0c", 0, 0); printf("|fin");
+	b = ft_printf("@moulitest: %.7c %5.0c", 0, 0); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 2 - 7\n");
-	a = printf("@moulitest: %.7s %5.0s", ptr_null, ptr_null); printf("|fin");
+	a = printf("@moulitest: %.7s %5.0s", ptr_null, ptr_null); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("@moulitest: %.7s %5.0s", ptr_null, ptr_null); printf("|fin");
+	b = ft_printf("@moulitest: %.7s %5.0s", ptr_null, ptr_null); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 3\n");
-	a = printf("%.2c", NULL); printf("|fin");
+	a = printf("%.2c", NULL); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("%.2c", NULL); printf("|fin");
+	b = ft_printf("%.2c", NULL); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 4\n");
-	a = printf("@moulitest: %c", 0); printf("|fin");
+	a = printf("@moulitest: %c", 0); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("@moulitest: %c", 0); printf("|fin");
+	b = ft_printf("@moulitest: %c", 0); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 5\n");
-	a = printf("%2c", 0); printf("|fin");
+	a = printf("%2c", 0); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("%2c", 0); printf("|fin");
+	b = ft_printf("%2c", 0); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 6\n");
-	a = printf("null %c and text", 0); printf("|fin");
+	a = printf("null %c and text", 0); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("null %c and text", 0); printf("|fin");
+	b = ft_printf("null %c and text", 0); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[0;36m======================= TEST\033[0m 7\n");
-	a = printf("@moulitest: %5.d %5.0d", 0, 0); printf("|fin");
+	a = printf("@moulitest: %5.d %5.0d", 0, 0); printf("|fin\n");
 		fflush(stdout);
-	b = ft_printf("@moulitest: %5.d %5.0d", 0, 0); printf("|fin");
+	b = ft_printf("@moulitest: %5.d %5.0d", 0, 0); printf("|fin\n");
 	ft_check(a, b);
 
 	printf("\033[1;31m");
-	printf("\n=============================================================================\n");
-	printf("******************** PART 20 :\n\n\n");
+	printf("\n\n\n___ Part 20 - 1 ___\n");
 	printf("\033[0m;");
 
-		printf("\033[0;36m======================= TEST\033[0m 1 - 1\n");
-		i = printf("%.2c", NULL); printf("|fin");
-			fflush(stdout);
-		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%.2c", NULL); printf("|fin");
-		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 1 - 1\n");
+	a = printf("%.2c", NULL); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%.2c", NULL); printf("|fin\n");
+	ft_check(a, b);
+	printf("\033[0;36m======================= TEST\033[0m 1 - 2\n");
+	a = printf("@moulitest: %c", 0); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("@moulitest: %c", 0); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 1 - 2\n");
-		i = printf("@moulitest: %c", 0); printf("|fin");
-			fflush(stdout);
-		printf("                                 \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("@moulitest: %c", 0); printf("|fin");
-		printf("                                 \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 1 - 3\n");
+	a = printf("%2c", 0); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%2c", 0); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 1 - 3\n");
-		i = printf("%2c", 0); printf("|fin");
-			fflush(stdout);
-		printf("                                            \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%2c", 0); printf("|fin");
-		printf("                                            \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 2 - 1\n");
+	a = printf("%05d", -42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%05d", -42); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 2 - 1\n");
-		i = printf("%05d", -42); printf("|fin");
-			fflush(stdout);
-		printf("                                            \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%05d", -42); printf("|fin");
-		printf("                                            \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 2 - 2\n");
+	a = printf("%05i", -42); printf("|fin\n");
+		fflush(stdout);
+	a = ft_printf("%05i", -42); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 2 - 2\n");
-		i = printf("%05i", -42); printf("|fin");
-			fflush(stdout);
-		printf("                                            \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%05i", -42); printf("|fin");
-		printf("                                            \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 2 - 3\n");
+	a = printf("%05u", -42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%05u", -42); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 2 - 3\n");
-		i = printf("%05u", -42); printf("|fin");
-			fflush(stdout);
-		printf("                                       \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%05u", -42); printf("|fin");
-		printf("                                       \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 2 - 4\n");
+	a = printf("%05x", -42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%05x", -42); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 2 - 4\n");
-		i = printf("%05x", -42); printf("|fin");
-			fflush(stdout);
-		printf("                                         \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%05x", -42); printf("|fin");
-		printf("                                         \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 2 - 5\n");
+	a = printf("%05X", -42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%05X", -42); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 2 - 5\n");
-		i = printf("%05X", -42); printf("|fin");
-			fflush(stdout);
-		printf("                                         \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%05X", -42); printf("|fin");
-		printf("                                         \033[1;33mretour unofficiel : %d\033[0m\n", i);
-
-		printf("\033[0;36m======================= TEST\033[0m 2 - 6\n");
-		i = printf("%05c", -42); printf("|fin");
-			fflush(stdout);
-		printf("                                            \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%05c", -42); printf("|fin");
-		printf("                                            \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 2 - 6\n");
+	a = printf("%05c", -42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%05c", -42); printf("|fin\n");
+	ft_check(a, b);
 
 	printf("\033[1;31m");
-	printf("\n=============================================================================\n");
-	printf("******************** PART 20 :\n\n\n");
+
+	printf("\n\n\n___ Part 20 - 2 ___\n");
 	printf("\033[0m;");
 
-		printf("\033[0;36m======================= TEST\033[0m 1 - 1\n");
-		i = printf("%5d", -42); printf("|fin");
-			fflush(stdout);
-		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%5d", -42); printf("|fin");
-		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 1 - 1\n");
+	a = printf("%5d", -42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%5d", -42); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 1 - 2\n");
-		i = printf("%5i", -42); printf("|fin");
-			fflush(stdout);
-		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%5i", -42); printf("|fin");
-		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 1 - 2\n");
+	a = printf("%5i", -42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%5i", -42); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 1 - 3\n");
-		i = printf("%5u", -42); printf("|fin");
-			fflush(stdout);
-		printf("                                        \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%5u", -42); printf("|fin");
-		printf("                                        \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 1 - 3\n");
+	a = printf("%5u", -42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%5u", -42); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 1 - 4\n");
-		i = printf("%5x", -42); printf("|fin");
-			fflush(stdout);
-		printf("                                          \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%5x", -42); printf("|fin");
-		printf("                                          \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 1 - 4\n");
+	a = printf("%5x", -42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%5x", -42); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 1 - 5\n");
-		i = printf("%05X", -42); printf("|fin");
-			fflush(stdout);
-		printf("                                          \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%05X", -42); printf("|fin");
-		printf("                                          \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 1 - 5\n");
+	a = printf("%05X", -42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%05X", -42); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 1 - 6\n");
-		i = printf("%05p", -42); printf("|fin");
-			fflush(stdout);
-		printf("                                        \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%05p", -42); printf("|fin");
-		printf("                                        \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 1 - 6\n");
+	a = printf("%05p", -42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%05p", -42); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 1 - 7\n");
-		i = printf("%05c", -42); printf("|fin");
-			fflush(stdout);
-		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%05c", -42); printf("|fin");
-		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 1 - 7\n");
+	a = printf("%05c", -42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%05c", -42); printf("|fin\n");
+	ft_check(a, b);
 
 	printf("\033[1;31m");
-	printf("\n=============================================================================\n");
-	printf("******************** PART 21 :\n\n\n");
+	printf("\n\n\n___ Part 21 ___\n");
 	printf("\033[0m;");
 
-		printf("\033[0;36m======================= TEST\033[0m 1\n");
-		i = printf("{%3c}", 0); printf("|fin");
-			fflush(stdout);
-		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("{%3c}", 0); printf("|fin");
-		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 1\n");
+	a = printf("{%3c}", 0); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("{%3c}", 0); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 2\n");
-		i = printf("%s%d%p%%%i%u%x%X%c","bonjour", 42, &c, 42, 42, 42, 42, 'c'); printf("|fin");
-			fflush(stdout);
-		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("%s%d%p%%%i%u%x%X%c","bonjour", 42, &c, 42, 42, 42, 42, 'c'); printf("|fin");
-		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 2\n");
+	a = printf("%s%d%p%%%i%u%x%X%c","bonjour", 42, &c, 42, 42, 42, 42, 'c'); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("%s%d%p%%%i%u%x%X%c","bonjour", 42, &c, 42, 42, 42, 42, 'c'); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 3\n");
-		i = printf("{%*c}", 0, 0); printf("|fin");
-			fflush(stdout);
-		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("{%*c}", 0, 0); printf("|fin");
-		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 3\n");
+	a = printf("{%*c}", 0, 0); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("{%*c}", 0, 0); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 4 - 1\n");
-		i = printf("{%05.*d}", -15, 42); printf("|fin");
-			fflush(stdout);
-		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("{%05.*d}", -15, 42); printf("|fin");
-		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 4 - 1\n");
+	a = printf("{%05.*d}", -15, 42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("{%05.*d}", -15, 42); printf("|fin\n");
+	ft_check(a, b);
 
-		printf("\033[0;36m======================= TEST\033[0m 4 - 2\n");
-		i = printf("{%05.*u}", -10, 42); printf("|fin");
-			fflush(stdout);
-		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("{%05.*u}", -10, 42); printf("|fin");
-		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+	printf("\033[0;36m======================= TEST\033[0m 4 - 2\n");
+	a = printf("{%05.*u}", -10, 42); printf("|fin\n");
+		fflush(stdout);
+	b = ft_printf("{%05.*u}", -10, 42); printf("|fin\n");
+	ft_check(a, b);
 
 	printf("\033[1;31m");
 	printf("\n=============================================================================\n");
