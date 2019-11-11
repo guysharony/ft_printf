@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 06:50:47 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/11 07:48:10 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/11 08:08:24 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,13 @@ int		ft_size_string(char *str, t_format f)
 	tmp = 0;
 	if (f.pr < 0)
 		len += (int)ft_strlen(str);
-	else if (f.pr == 0 && f.wi > 0 && (int)ft_strlen(str) > f.wi)
-		len += (int)ft_strlen(str);
+	else if (f.pr == 0)
+	{
+		if (!ft_format('-', f.fl) && f.wi > 0 && (int)ft_strlen(str) > f.wi)
+			len += (int)ft_size_nstr(str, f.pr);
+		else if (ft_format('-', f.fl))
+			len += (int)ft_strlen(str);
+	}
 	else if (f.pr > 0)
 	{
 		if (f.pr < (int)ft_strlen(str))
@@ -37,8 +42,13 @@ void	ft_print_string(char *str, t_format f)
 {
 	if (f.pr < 0)
 		ft_putstr(str);
-	else if (f.pr == 0 && f.wi > 0 && (int)ft_strlen(str) > f.wi)
-		ft_putstr(str);
+	else if (f.pr == 0)
+	{
+		if (!ft_format('-', f.fl) && f.wi > 0 && (int)ft_strlen(str) > f.wi)
+			ft_putnstr(str, f.pr);
+		else if (ft_format('-', f.fl))
+			ft_putstr(str);
+	}
 	else if (f.pr > 0)
 	{
 		if (f.pr < (int)ft_strlen(str))
