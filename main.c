@@ -552,10 +552,10 @@ int main() {
 		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
 
 		printf("\033[0;36m======================= TEST\033[0m 12    %%s = 'string'\n");
-		i = printf("|ok %.s|\n", string);
+		i = printf("|ok %6.s|\n", string);
 			fflush(stdout);
 		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
-		i = ft_printf("|ok %.s|\n", string);
+		i = ft_printf("|ok %6.s|\n", string);
 		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
 
 		printf("\033[0;36m======================= TEST\033[0m 13    %%s = (null)\n");
@@ -624,6 +624,13 @@ int main() {
 			fflush(stdout);
 		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
 		i = ft_printf("|ok %*.*c|\n", -20, -10, '@');
+		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
+
+		printf("\033[0;36m======================= TEST\033[0m 8\n");
+		i = printf("|ok %*.*s|\n", 20, 10, "riddim dubstep");
+			fflush(stdout);
+		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
+		i = ft_printf("|ok %*.*s|\n", 20, 10, "riddim dubstep");
 		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
 
 		printf("\033[0;36m======================= TEST\033[0m 8\n");

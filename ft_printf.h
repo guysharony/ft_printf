@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/11 07:01:45 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/11 07:24:04 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int					ft_nbrlen(long long nb, int base);
 int					ft_u_nbrlen(unsigned int nb, int base);
 
 void				ft_putnbr(int nb);
+int					ft_size_nstr(char *str, int len);
 void				ft_putfloat(double nb, int p);
 void				ft_putchar_base(int c, char *base);
 void				ft_putnbr_base(long long nb, char *base);

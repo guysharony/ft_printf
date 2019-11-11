@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 06:50:47 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/11 07:10:29 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/11 07:48:10 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ int		ft_size_string(char *str, t_format f)
 	tmp = 0;
 	if (f.pr < 0)
 		len += (int)ft_strlen(str);
+	else if (f.pr == 0 && f.wi > 0 && (int)ft_strlen(str) > f.wi)
+		len += (int)ft_strlen(str);
 	else if (f.pr > 0)
 	{
-		len += (int)ft_strlen(str);
 		if (f.pr < (int)ft_strlen(str))
-			len -= f.pr;
+			len += (int)ft_size_nstr(str, f.pr);
+		else
+			len += (int)ft_strlen(str);
 	}
 	return (len);
 }
@@ -33,6 +36,8 @@ int		ft_size_string(char *str, t_format f)
 void	ft_print_string(char *str, t_format f)
 {
 	if (f.pr < 0)
+		ft_putstr(str);
+	else if (f.pr == 0 && f.wi > 0 && (int)ft_strlen(str) > f.wi)
 		ft_putstr(str);
 	else if (f.pr > 0)
 	{

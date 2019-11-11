@@ -6,6 +6,9 @@ int		main(void)
 	int		a;
 
 	a = 42;
-	printf("|%.0s|\n", "Test");
+	printf("|%10s|\n", "Test1");
+	printf("|%-10s|\n", "Test1");
+	printf("|%10s|\n", "Test1");
+	printf("|%-10s|\n", "Test1");
 	return (0);
 }
