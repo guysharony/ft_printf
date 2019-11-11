@@ -5,5 +5,4 @@ printf "\n\033[1;37m===== output =====\n"
 ./a.out > test.txt
 printf "\n\033[1;32m===== cleaning =====\n"
 make fclean
-rm -rf a.out
 printf "\033[0m"

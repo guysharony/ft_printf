@@ -6,12 +6,11 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 11:36:30 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/11 08:23:45 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/11 08:27:00 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#include <stdio.h>
 
 int				dsp_char(t_format f, int c)
 {
@@ -26,7 +25,6 @@ int				dsp_char(t_format f, int c)
 		else if (!ft_format('-', f.fl) && ft_format('0', f.fl))
 			ft_time('0', f.wi - len);
 	}
-	printf("[%d] - [%d] - [%d] - [%s]\n", f.wi, f.pr, len, f.fl);
 	ft_print_char(c, f);
 	if (f.wi > len)
 	{

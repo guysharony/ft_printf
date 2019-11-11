@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_adress.c                                        :+:      :+:    :+:   */
+/*   dsp_adress_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 13:09:56 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 18:17:34 by guysharon        ###   ########.fr       */
+/*   Created: 2019/11/11 08:29:52 by gsharony          #+#    #+#             */
+/*   Updated: 2019/11/11 08:29:57 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_size_adress(void *a, t_format f)
 	}
 	else if (f.pr > 0)
 	{
-		tmp = f.pr - ft_nbrlen((long long)a, 16); 
+		tmp = f.pr - ft_nbrlen((long long)a, 16);
 		len += ft_nbrlen((long long)a, 16);
 	}
 	if (tmp > 0)

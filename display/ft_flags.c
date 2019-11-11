@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 07:42:01 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 21:41:06 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/11 09:37:08 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ t_print				ft_flags(const char *format, va_list list)
 	f.vl = format[f.po];
 	p.len = ft_conv(f, list);
 	p.str = (char *)format + f.po + 1;
+	if (p.len < 0)
+		p.str--;
 	return (p);
 }
