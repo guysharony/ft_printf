@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:36:13 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 21:39:43 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/11 05:10:55 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,5 @@ void				ft_putnbr_base(long long nb, char *base);
 void				ft_putlongnbr(unsigned int nb, char *base);
 void				ft_putstr(char *str);
 void				ft_putchar(int c);
-
-int					ft_sign(t_format f, long long nb);
 
 #endif

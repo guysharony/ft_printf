@@ -9,6 +9,8 @@ int		ft_size_unsigned(unsigned int nb, char *base, t_format f)
 	tmp = 0;
 	if (f.pr < 0)
 		len += ft_nbrlen(nb, ft_strlen(base));
+	else if (f.pr == 0 && nb != 0)
+		len += ft_nbrlen(nb, ft_strlen(base));
 	else if (f.pr > 0)
 	{
 		tmp = f.pr - ft_nbrlen(nb, ft_strlen(base));
@@ -22,6 +24,8 @@ int		ft_size_unsigned(unsigned int nb, char *base, t_format f)
 void	ft_print_unsigned(unsigned int nb, char *base, t_format f)
 {
 	if (f.pr < 0)
+		ft_putnbr_base(nb, base);
+	else if (f.pr == 0 && nb != 0)
 		ft_putnbr_base(nb, base);
 	else if (f.pr > 0)
 	{

@@ -6,13 +6,23 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 12:57:46 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/10 21:39:29 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/11 05:15:41 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int		dsp_unsigned(t_format f, unsigned int nb, char *base)
+static unsigned int		sign_unsigned(unsigned int nb)
+{
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+		return (-nb);
+	}
+	return (nb);
+}
+
+int						dsp_unsigned(t_format f, unsigned int nb, char *base)
 {
 	int		len;
 
@@ -22,14 +32,17 @@ int		dsp_unsigned(t_format f, unsigned int nb, char *base)
 	{
 		if (!ft_format('-', f.fl) && (!ft_format('0', f.fl) || f.pr >= 0))
 			ft_time(' ', f.wi - len);
+		else if (ft_format('0', f.fl) && f.pr < 0)
+		{
+			nb = sign_unsigned(nb);
+			ft_time('0', f.wi - len);
+		}
 	}
 	ft_print_unsigned(nb, base, f);
 	if (f.wi > len)
 	{
 		if (ft_format('-', f.fl))
 			ft_time(' ', f.wi - len);
-		else if (ft_format('0', f.fl) && f.pr < 0)
-			ft_time('0', f.wi - len);
 		len += (f.wi - len);
 	}
 	return (len);

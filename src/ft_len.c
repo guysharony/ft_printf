@@ -6,11 +6,17 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 13:00:20 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/09 14:23:22 by guysharon        ###   ########.fr       */
+/*   Updated: 2019/11/11 05:13:51 by guysharon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+
+void	ft_time(char c, int n)
+{
+	while (n-- > 0)
+		write(1, &c, 1);
+}
 
 int		ft_format(char c, char *format)
 {
