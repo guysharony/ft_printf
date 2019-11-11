@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 08:36:05 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/11 10:23:55 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/11 12:37:48 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -2544,8 +2544,6 @@ int		main(void)
 		printf("                                             \033[1;33mretour officiel   : %d\033[0m\n", i);
 		i = ft_printf("%*s|fin\n", -150, "coucou");
 		printf("                                             \033[1;33mretour unofficiel : %d\033[0m\n", i);
-		// while (1)
-		// 	;
 
 	return (0);
 }
