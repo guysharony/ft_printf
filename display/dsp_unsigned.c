@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 12:57:46 by gsharony          #+#    #+#             */
-/*   Updated: 2019/11/11 12:12:32 by gsharony         ###   ########.fr       */
+/*   Updated: 2019/11/11 12:25:09 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,10 @@ int						dsp_unsigned(t_format f, unsigned int nb, char *base)
 	if (f.wi > len)
 	{
 		if (ft_format('-', f.fl))
-			ft_time(' ', f.wi - len);
+		{
+			if (!(ft_format('0', f.fl) && f.pr <= 0))
+				ft_time(' ', f.wi - len);
+		}
 		len += (f.wi - len);
 	}
 	return (len);
