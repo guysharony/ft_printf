@@ -6,6 +6,6 @@ int		main(void)
 	int		a;
 
 	a = 42;
-	printf("|%*.*p%%|\n", 20, 15, -12345);
+	printf("|%.0s|\n", "Test");
 	return (0);
 }
